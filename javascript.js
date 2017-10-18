@@ -6,7 +6,7 @@ $(document).ready(function() {
 	toDo[0] = new String('0');
 	var count = 0;
 	var interval;
-	var nbrLevel = 16;
+	var nbrLevel = 17;
 	var temps = 500;
 	var started = 0;
 
@@ -360,9 +360,9 @@ $(document).ready(function() {
 	}
 
 		function lvl1() {
-			posOrigin = new String("#I7");
-			dirOrigin = 4;
-			pieceOrigin[0] = new String("C7");
+			posOrigin = new String("#E5");
+			dirOrigin = 2;
+			pieceOrigin[0] = new String("E6");
 			pieceOrigin[1] = new String("00");
 			numPiece = 1;
 
@@ -372,59 +372,26 @@ $(document).ready(function() {
 
 			gridTest[0] = new Array(0,0,0,0,0,0,0,0,0,0);
 			gridTest[1] = new Array(0,0,0,0,0,0,0,0,0,0);
-			gridTest[2] = new Array(0,0,0,0,0,0,1,0,0,0);
-			gridTest[3] = new Array(0,0,0,0,0,0,1,0,0,0);
-			gridTest[4] = new Array(0,0,0,0,0,0,1,0,0,0);
-			gridTest[5] = new Array(0,0,0,1,1,1,2,0,0,0);
-			gridTest[6] = new Array(0,0,0,1,0,0,0,0,0,0);
-			gridTest[7] = new Array(0,0,0,1,0,0,0,0,0,0);
-			gridTest[8] = new Array(0,0,0,1,1,1,1,0,0,0);
+			gridTest[2] = new Array(0,0,0,0,0,0,0,0,0,0);
+			gridTest[3] = new Array(0,0,0,0,0,0,0,0,0,0);
+			gridTest[4] = new Array(0,0,0,0,1,1,0,0,0,0);
+			gridTest[5] = new Array(0,0,0,0,0,0,0,0,0,0);
+			gridTest[6] = new Array(0,0,0,0,0,0,0,0,0,0);
+			gridTest[7] = new Array(0,0,0,0,0,0,0,0,0,0);
+			gridTest[8] = new Array(0,0,0,0,0,0,0,0,0,0);
 			gridTest[9] = new Array(0,0,0,0,0,0,0,0,0,0);
 
 			grid[0] = new Array(0,0,0,0,0,0,0,0,0,0);
 			grid[1] = new Array(0,0,0,0,0,0,0,0,0,0);
-			grid[2] = new Array(0,0,0,0,0,0,1,0,0,0);
-			grid[3] = new Array(0,0,0,0,0,0,1,0,0,0);
-			grid[4] = new Array(0,0,0,0,0,0,1,0,0,0);
-			grid[5] = new Array(0,0,0,1,1,1,2,0,0,0);
-			grid[6] = new Array(0,0,0,1,0,0,0,0,0,0);
-			grid[7] = new Array(0,0,0,1,0,0,0,0,0,0);
-			grid[8] = new Array(0,0,0,1,1,1,1,0,0,0);
+			grid[2] = new Array(0,0,0,0,0,0,0,0,0,0);
+			grid[3] = new Array(0,0,0,0,0,0,0,0,0,0);
+			grid[4] = new Array(0,0,0,0,1,1,0,0,0,0);
+			grid[5] = new Array(0,0,0,0,0,0,0,0,0,0);
+			grid[6] = new Array(0,0,0,0,0,0,0,0,0,0);
+			grid[7] = new Array(0,0,0,0,0,0,0,0,0,0);
+			grid[8] = new Array(0,0,0,0,0,0,0,0,0,0);
 			grid[9] = new Array(0,0,0,0,0,0,0,0,0,0);
 		}
-		// function lvl1() {
-		// 	posOrigin = new String("#E5");
-		// 	dirOrigin = 2;
-		// 	pieceOrigin[0] = new String("E6");
-		// 	pieceOrigin[1] = new String("00");
-		// 	numPiece = 1;
-
-		// 	movePlat = false;
-
-		// 	perfect = new String("<span>1 coup en</span><span>1 fonction</span>");
-
-		// 	gridTest[0] = new Array(0,0,0,0,0,0,0,0,0,0);
-		// 	gridTest[1] = new Array(0,0,0,0,0,0,0,0,0,0);
-		// 	gridTest[2] = new Array(0,0,0,0,0,0,0,0,0,0);
-		// 	gridTest[3] = new Array(0,0,0,0,0,0,0,0,0,0);
-		// 	gridTest[4] = new Array(0,0,0,0,1,1,0,0,0,0);
-		// 	gridTest[5] = new Array(0,0,0,0,0,0,0,0,0,0);
-		// 	gridTest[6] = new Array(0,0,0,0,0,0,0,0,0,0);
-		// 	gridTest[7] = new Array(0,0,0,0,0,0,0,0,0,0);
-		// 	gridTest[8] = new Array(0,0,0,0,0,0,0,0,0,0);
-		// 	gridTest[9] = new Array(0,0,0,0,0,0,0,0,0,0);
-
-		// 	grid[0] = new Array(0,0,0,0,0,0,0,0,0,0);
-		// 	grid[1] = new Array(0,0,0,0,0,0,0,0,0,0);
-		// 	grid[2] = new Array(0,0,0,0,0,0,0,0,0,0);
-		// 	grid[3] = new Array(0,0,0,0,0,0,0,0,0,0);
-		// 	grid[4] = new Array(0,0,0,0,1,1,0,0,0,0);
-		// 	grid[5] = new Array(0,0,0,0,0,0,0,0,0,0);
-		// 	grid[6] = new Array(0,0,0,0,0,0,0,0,0,0);
-		// 	grid[7] = new Array(0,0,0,0,0,0,0,0,0,0);
-		// 	grid[8] = new Array(0,0,0,0,0,0,0,0,0,0);
-		// 	grid[9] = new Array(0,0,0,0,0,0,0,0,0,0);
-		// }
 
 		function lvl2() {
 			posOrigin = new String("#E5");
@@ -665,6 +632,40 @@ $(document).ready(function() {
 		}
 
 		function lvl9() {
+			posOrigin = new String("#I7");
+			dirOrigin = 4;
+			pieceOrigin[0] = new String("C7");
+			pieceOrigin[1] = new String("00");
+			numPiece = 1;
+
+			movePlat = false;
+
+			perfect = new String("<span>1 coup en</span><span>1 fonction</span>");
+
+			gridTest[0] = new Array(0,0,0,0,0,0,0,0,0,0);
+			gridTest[1] = new Array(0,0,0,0,0,0,0,0,0,0);
+			gridTest[2] = new Array(0,0,0,0,0,0,1,0,0,0);
+			gridTest[3] = new Array(0,0,0,0,0,0,1,0,0,0);
+			gridTest[4] = new Array(0,0,0,0,0,0,1,0,0,0);
+			gridTest[5] = new Array(0,0,0,1,1,1,2,0,0,0);
+			gridTest[6] = new Array(0,0,0,1,0,0,0,0,0,0);
+			gridTest[7] = new Array(0,0,0,1,0,0,0,0,0,0);
+			gridTest[8] = new Array(0,0,0,1,1,1,1,0,0,0);
+			gridTest[9] = new Array(0,0,0,0,0,0,0,0,0,0);
+
+			grid[0] = new Array(0,0,0,0,0,0,0,0,0,0);
+			grid[1] = new Array(0,0,0,0,0,0,0,0,0,0);
+			grid[2] = new Array(0,0,0,0,0,0,1,0,0,0);
+			grid[3] = new Array(0,0,0,0,0,0,1,0,0,0);
+			grid[4] = new Array(0,0,0,0,0,0,1,0,0,0);
+			grid[5] = new Array(0,0,0,1,1,1,2,0,0,0);
+			grid[6] = new Array(0,0,0,1,0,0,0,0,0,0);
+			grid[7] = new Array(0,0,0,1,0,0,0,0,0,0);
+			grid[8] = new Array(0,0,0,1,1,1,1,0,0,0);
+			grid[9] = new Array(0,0,0,0,0,0,0,0,0,0);
+		}
+
+		function lvl10() {
 			posOrigin = new String("#A10");
 			dirOrigin = 4;
 			pieceOrigin[0] = new String("J10");
@@ -698,7 +699,7 @@ $(document).ready(function() {
 			grid[9] = new Array(0,0,0,0,0,0,0,0,1,1);
 		}
 
-		function lvl10() {
+		function lvl11() {
 			posOrigin = new String("#E3");
 			dirOrigin = 2;
 			pieceOrigin[0] = new String("B7");
@@ -733,7 +734,7 @@ $(document).ready(function() {
 			grid[9] = new Array(0,0,0,0,0,0,0,0,0,0);
 		}
 
-		function lvl11() {
+		function lvl12() {
 			posOrigin = new String("#F3");
 			dirOrigin = 1;
 			pieceOrigin[0] = new String("A2");
@@ -774,7 +775,7 @@ $(document).ready(function() {
 			grid[9] = new Array(2,1,2,0,0,0,0,2,1,2);
 		}
 
-		function lvl12() {
+		function lvl13() {
 			posOrigin = new String("#F1");
 			dirOrigin = 2;
 			pieceOrigin[0] = new String("D6");
@@ -815,7 +816,7 @@ $(document).ready(function() {
 			grid[9] = new Array(0,0,0,0,1,1,1,1,1,0);
 		}
 
-		function lvl13() {
+		function lvl14() {
 			posOrigin = new String("#J1");
 			dirOrigin = 2;
 			pieceOrigin[0] = new String("H4");
@@ -857,7 +858,7 @@ $(document).ready(function() {
 			grid[9] = new Array(1,1,1,2,1,1,2,1,1,2);
 		}
 
-		function lvl14() {
+		function lvl15() {
 			posOrigin = new String("#H2");
 			dirOrigin = 2;
 			pieceOrigin[0] = new String("B9");
@@ -891,7 +892,7 @@ $(document).ready(function() {
 			grid[9] = new Array(0,0,0,0,0,0,0,0,0,0);
 		}
 
-		function lvl15() {
+		function lvl16() {
 			posOrigin = new String("#B2");
 			dirOrigin = 2;
 			pieceOrigin[0] = new String("I4");
@@ -924,7 +925,7 @@ $(document).ready(function() {
 			grid[8] = new Array(0,0,0,1,0,0,0,0,0,0);
 			grid[9] = new Array(0,0,0,0,0,0,0,0,0,0);
 		}
-		function lvl16() {
+		function lvl17() {
 			posOrigin = new String("#E2");
 			dirOrigin = 2;
 			pieceOrigin[0] = new String("E8");
@@ -939,7 +940,7 @@ $(document).ready(function() {
 			path[2] = new String("E6");
 			path[3] = new String("F6");
 
-			perfect = new String("<span>1 coup en</span><span>1 fonction</span>");
+			perfect = new String("<span>3 coups en</span><span>1 fonction</span>");
 
 			gridTest[0] = new Array(0,0,0,0,0,0,0,0,0,0);
 			gridTest[1] = new Array(0,0,0,0,0,0,0,0,0,0);
@@ -962,7 +963,6 @@ $(document).ready(function() {
 			grid[7] = new Array(0,0,0,0,0,0,0,0,0,0);
 			grid[8] = new Array(0,0,0,0,0,0,0,0,0,0);
 			grid[9] = new Array(0,0,0,0,0,0,0,0,0,0);
-			console.log(grid);
 		}
 
 	function initFonction () {
@@ -1481,6 +1481,11 @@ $(document).ready(function() {
 		{
 			level = 16;
 			lvl16();
+		}
+		else if(level == 17 || level == '17')
+		{
+			level = 17;
+			lvl17();
 		}
 		else
 		{
