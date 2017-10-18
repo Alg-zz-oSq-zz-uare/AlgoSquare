@@ -1,0 +1,850 @@
+body, html, main {
+	padding: 0;
+	margin: 0;
+	background-color: rgb(60, 60, 60);
+	background-size: cover;
+}
+
+#buttons {
+	width: 40vw;
+	height: 3vh;
+	display: flex;
+	justify-content: space-around;
+	padding-top: 2vh;
+	padding-left: 2vw;
+}
+
+#buttons button {
+	width: 4vw;
+	height: 1.5vw;
+	background-color: white;
+	border-radius: 10px;
+	border: none;
+}
+
+#gagne, #perdu {
+	z-index: 2;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+#gagne div, #perdu div {
+	position: absolute;
+	width: 40.5vw;
+	height: 20vh;
+	top: 2vh;
+	right: 5vw;
+	background-color: white;
+
+	border-radius: 10px;
+}
+
+#gagne h1, #perdu h1 {
+	position: absolute;
+	top: 2vh;
+	left: 17vw;
+	margin: 0;
+	background-color: white;
+
+	border-radius: 10px;
+}
+
+#perdu button {
+	position: absolute;
+	top: 1vh;
+	right: 1vw;
+	width: 4vw;
+	height: 4vw;
+	background-color: lightblue;
+	border-radius: 10px;
+	border: none;
+}
+
+#next {
+	position: absolute;
+	bottom: 1vh;
+	left: 5%;
+	text-align: center;
+	width: 40%;
+	height: 35%;
+	background-color: lightblue;
+	border-radius: 10px;
+	border: none;
+	font-weight: bold;
+}
+
+#stay {
+	position: absolute;
+	bottom: 1vh;
+	right: 5%;
+	text-align: center;
+	width: 40%;
+	height: 35%;
+	background-color: lightblue;
+	border-radius: 10px;
+	border: none;
+	font-weight: bold;
+}
+
+#terrain {
+	position: absolute;
+	top: 25vh;
+	right: 5vw;
+	width: 40vw;
+	height: 40vw;
+	margin: 0 !important;
+	display: flex;
+	flex-wrap: wrap;
+	z-index: 2;
+	border: solid grey 2px;
+	/*display: none;*/
+}
+/*.order {
+	/*display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 1.5vw;
+	height: 1.5vw;
+	background-color: rgba(50, 50, 50, 0.4);
+	border-radius: 50%;*/
+	/*position: relative;
+	left: 0.5vw;
+	top: 0.5vw;
+	margin: 0;
+	font-size: 1vw;
+	font-weight: bold;
+}*/
+
+.piece {
+	width: 2vw;
+	height: 2vw;
+	border-radius: 50%;
+	background-color: yellow;
+	margin-left: 1vw;
+	margin-top: 1vw;
+}
+
+.white {
+	background-color: white;
+}
+
+.blanc {
+	background-color: white;
+
+}
+
+.violet {
+	background-color: violet;
+}
+
+.bleu {
+	background-color: #44d0f9;
+}
+
+.vert {
+	background-color: #00d000;
+}
+
+.orange {
+	background-color: #e29500;
+}
+
+.option {
+	position: relative;
+	width: 3vw;
+	height: 3vw;
+	background-color: white;
+	margin-right: 1vw;
+	box-shadow: 0px 0px 4px 4px black;
+}
+
+#option4 {
+	color: #00d000;
+	border: solid white 1px;
+}
+#option5 {
+	color: #e29500;
+	border: solid white 1px;
+}
+#option20 {
+	color: #44d0f9;
+	border: solid white 1px;
+}
+
+#option7, #option8, #option8-1 {
+	transform: rotate(-45deg);
+	position: relative;
+	left: 3vw;
+	box-shadow: 0px 0px 2px 2px white;
+}
+
+.turn {
+	transform: rotate(-90deg);
+}
+
+.option img, .caseF img, .case img, .f-header img, .option i, .caseF i {
+	position: absolute;
+	margin-top: 10%;
+	margin-left: 10%;
+	top: 0;
+	left: 0;
+	width: 80%;
+	height: 80%;
+}
+
+.case {
+	/*display: flex;
+	justify-content: center;
+	align-items: center;*/
+	position: relative;
+	width: 4vw;
+	height: 4vw;
+}
+
+.caseF {
+	position: relative;
+}
+
+.bordure {
+	box-shadow: 0 0 2px 1px black !important;
+}
+
+.orange, .vert, .caseF, .f-header, .bleu, .violet {
+	box-shadow: 0 0 1px black;
+}
+
+.tranche {
+	padding-top: 0.5vh;
+	padding-left: 2vw;
+	display: flex;
+	flex-direction: row;
+	width: 50vw;
+	height: 4vw;
+}
+
+#tranche1 {
+	position: relative;
+}
+
+#action {
+	width: 50vw;
+	/*height: 100vh;*/
+}
+#options {
+	padding-top: 3vh;
+	width: 100%;
+	height: 19vh;
+	background-color: rgb(100, 100, 100);
+	border-radius: 0 0 10px 0;
+}
+#fonctions {
+	z-index: 1;
+	/*border-top: solid grey 1px;*/
+	position: absolute;
+	top: 24vh;
+	left: 0;
+	padding-top: 2vh;
+	width: 50vw;
+	
+}
+
+.fonction {
+	display: flex;
+	flex-direction: row;
+	margin-left: 1vw;
+	margin-top: 1vh;
+	width: 48vw;
+	height: 3vw;
+	background-color: white;
+}
+
+.f-header h3 {
+	margin: 0;
+	margin-top: 1.1vw;
+	margin-left: 0.7vw;
+}
+
+h3 {
+	font-size: 1.5vw;
+}
+button {
+	font-size: 1vw;
+}
+
+.caseF, h3 {
+	width: 3vw;
+	height: 3vw;
+}
+.f-header {
+	position: relative;
+	width: 3vw;
+	height: 3vw;
+	background-color: black;
+	box-shadow: 0 0 4px 4px white;
+	/*display: flex;
+	justify-content: center;
+	align-items: center;*/
+}
+
+#tranche2 div {
+	position: relative;
+	left: -1vw;
+	top: 2vh;
+	background-color: black;/*#bcbcbc;*/
+	border-radius: 50%;
+	box-shadow: 0 0 4px 4px white;
+}
+
+.f-option{
+	margin: 0;
+	padding-top: 1vh;
+	padding-left: 0.6vw;
+}
+
+#start {
+	color: black;
+	width: 5vw;
+	height: 8vh;
+	background-color: #00d000;
+	position: absolute;
+	top: 13vh;
+	right: 5vw;
+	border: none;
+	border-radius: 10px;
+	font-weight: bold;
+	font-size: 3.5vw;
+}
+
+#startBis {
+	color: black;
+	width: 5vw;
+	height: 8vh;
+	background-color: #00d000;
+	position: absolute;
+	top: 13vh;
+	right: 5vw;
+	border: none;
+	border-radius: 10px;
+	font-weight: bold;
+	font-size: 3.5vw;
+}
+
+#select {
+	color: black;
+	width: 28vw;
+	height: 8vh;
+	background-color: rgb(250, 250, 0);
+	position: absolute;
+	top: 2vh;
+	right: 11vw;
+	border: none;
+	border-radius: 10px;
+	font-weight: bold;
+	font-size: 2vw;
+}
+#prev {
+	color: black;
+	width: 5vw;
+	height: 8vh;
+	background-color: rgb(250, 250, 0);
+	position: absolute;
+	top: 2vh;
+	right: 40vw;
+	border: none;
+	border-radius: 10px;
+	font-weight: bold;
+	font-size: 2.5vw;
+}
+#suiv {
+	color: black;
+	width: 5vw;
+	height: 8vh;
+	background-color: rgb(250, 250, 0);
+	position: absolute;
+	top: 2vh;
+	right: 5vw;
+	border: none;
+	border-radius: 10px;
+	font-weight: bold;
+	font-size: 2.5vw;
+}
+
+#reset {
+	color: black;
+	width: 5vw;
+	height: 3vw;
+	background-color: rgb(250, 250, 0);
+	position: relative;
+	top: -2vh;
+	left: 44vw;
+	/*margin-top: 2vh;*/
+	z-index: 3;
+	border: none;
+	border-radius: 10px;
+	font-weight: bold;
+	font-size: 1.5vw;
+}
+
+#stop {
+	color: black;
+	width: 5vw;
+	height: 8vh;
+	background-color: rgb(250, 25, 0);
+	position: absolute;
+	top: 13vh;
+	right: 11vw;
+	border: none;
+	border-radius: 10px;
+	font-weight: bold;
+	font-size: 2vw;
+}
+
+#slow {
+	color: black;
+	width: 3vw;
+	height: 5vh;
+	background-color: #00d000;
+	position: absolute;
+	top: 1.5vh;
+	left: 0.5vw;
+	border: solid black 2px;
+	border-radius: 10px;
+	font-weight: bold;
+	font-size: 1.5vw;
+}
+
+#speed {
+	color: black;
+	width: 3vw;
+	height: 5vh;
+	background-color: #00d000;
+	position: absolute;
+	top: 1.5vh;
+	right: 0.5vw;
+	border: solid black 2px;
+	border-radius: 10px;
+	font-weight: bold;
+	font-size: 1.5vw;
+}
+
+#time {
+	color: black;
+	width: 17vw;
+	height: 8vh;
+	background-color: rgb(250, 250, 0);
+	position: absolute;
+	top: 13vh;
+	right: 17vw;
+	border: none;
+	border-radius: 10px;
+	font-weight: bold;
+	font-size: 2vw;
+}
+#time img {
+	position: absolute;
+	top: 1vh;
+	left: 4vw;
+	width: 20%;
+	height: 70%;
+}
+
+#time p {
+	margin: 0;
+	margin-top: 1vh;
+	position: absolute;
+	top: 1vh;
+	right: 4.3vw;
+	font-weight: bold;
+	font-size: 2vw;
+}
+
+
+
+#nbrPerfect {
+	color: white;
+	width: 10vw;
+	height: 7.5vh;
+	position: absolute;
+	top: 13vh;
+	right: 35vw;
+	border: solid white 2px;
+	/*border-radius: 10px;*/
+	font-weight: bold;
+	font-size: 1.3vw;
+}
+
+#nbrPerfect p {
+	position: relative;
+	left: 1vw;
+	top: 0.5vh;
+	display: flex;
+	flex-direction: column;
+	margin-top: 0;
+}
+
+@media (orientation: portrait) and (max-device-width : 700px) {
+	#gagne div, #perdu div {
+		position: absolute;
+		width: 80vw;
+		height: 20vh;
+		top: 2vh;
+		left: 10vw;
+		background-color: white;
+
+		border-radius: 10px;
+	}
+
+	#gagne, #perdu {
+		height: calc(30vh + 80vw);
+	}
+
+	.close {
+		font-size: 3vh !important;
+		width: 10vw !important;
+		height: 10vw !important;
+	}
+
+	#next, #stay {
+		font-size: 2vh;
+	}
+
+	#gagne h1 {
+		position: absolute;
+		top: 2vh;
+		left: 30vw;
+		margin: 0;
+		background-color: white;
+
+		border-radius: 10px;
+		font-size: 5vh;
+	}
+	#perdu h1 {
+		position: absolute;
+		top: 7vh;
+		left: 30vw;
+		margin: 0;
+		background-color: white;
+
+		border-radius: 10px;
+		font-size: 5vh;
+	}
+	#action {
+		position: absolute;
+		top: calc(30vh + 80vw);
+		left: 0;
+		width: 100%;
+	}
+	.option {
+		width: 6.2vw;
+		height: 6.2vw;
+	}
+	.fonction {
+		width: calc(6.2vw * 15);
+	}
+	.caseF, .f-header {
+		width: 6.2vw;
+		height: 6.2vw;
+	}
+	.caseF {
+		background-color: white;
+	}
+	.tranche {
+		width: 95%;
+	}
+	.tranche div {
+		margin-left: 2vw;
+	}
+	#tranche2 {
+		position: relative;
+		top: 4vh;
+	}
+	.fonction {
+		margin-top: 4vh;
+	}
+	#fonctions {
+		left: 1vw;
+		width: 90%;
+	}
+	#buttons button {
+		width: 8vw;
+		height: 4vh;
+		font-size: 2.5vh;
+	}
+	#buttons {
+		padding-top: 5vh;
+		width: 90%;
+	}
+	#options {
+		border-radius: 0;
+	}
+	#reset {
+		top: -3vh;
+		width: 8vw;
+		height: 4vh;
+		left: 74vw;
+		width: 10vw;
+		font-size: 3.2vh;
+	}
+	#terrain {
+		width: 80vw;
+		height: 80vw;
+		left: 10vw;
+	}
+	.case {
+		width: 8vw;
+		height: 8vw;
+	}
+	.piece {
+		width: 6vw;
+		height: 6vw;
+	}
+	#select {
+		width: 60vw;
+		left: 20vw;
+		font-size: 3.5vh;
+	}
+	#prev {
+		width: 8vw;
+		left: 10vw;
+		font-size: 4vh;
+	}
+	#suiv {
+		width: 8vw;
+		right: 10vw;
+		font-size: 4vh;
+	}
+	#nbrPerfect {
+		left: 10vw;
+		width: 20vw;
+		font-size: 2vh;
+	}
+	#time {
+		left: 33vw !important;
+		width: 35vw;
+	}
+	#speed, #slow {
+		width: 20%;
+		font-size: 2.5vh;
+	}
+	#time img {
+		top: 1.5vh;
+		left: 8vw;
+		width: 5vw;
+		height: 5vh;
+	}
+	#time p {
+		top: 2vw;
+		left: 15vw;
+		font-size: 2.7vh;
+	}
+	#start, #startBis {
+		width: 10vw;
+		left: 80vw;
+		font-size: 6vh; 
+	}
+	#stop {
+		width: 10vw;
+		left: 69vw;
+		font-size: 3.5vh;
+	}
+	.violet {
+		background-color: violet !important;
+	}
+
+	.bleu {
+		background-color: #44d0f9 !important;
+	}
+
+	.vert {
+		background-color: #00d000 !important;
+	}
+
+	.orange {
+		background-color: #e29500 !important;
+	}
+}
+@media screen and (max-width : 640px) {
+	#gagne div, #perdu div {
+		position: absolute;
+		width: 80vw;
+		height: 20vh;
+		top: 2vh;
+		left: 10vw;
+		background-color: white;
+
+		border-radius: 10px;
+	}
+
+	#gagne, #perdu {
+		height: calc(30vh + 80vw);
+	}
+
+	.close {
+		font-size: 3vh !important;
+		width: 10vw !important;
+		height: 10vw !important;
+	}
+
+	#next, #stay {
+		font-size: 2vh;
+	}
+
+	#gagne h1 {
+		position: absolute;
+		top: 2vh;
+		left: 30vw;
+		margin: 0;
+		background-color: white;
+
+		border-radius: 10px;
+		font-size: 5vh;
+	}
+	#perdu h1 {
+		position: absolute;
+		top: 7vh;
+		left: 30vw;
+		margin: 0;
+		background-color: white;
+
+		border-radius: 10px;
+		font-size: 5vh;
+	}
+	#action {
+		position: absolute;
+		top: calc(30vh + 80vw);
+		left: 0;
+		width: 100%;
+	}
+	.option {
+		width: 6.2vw;
+		height: 6.2vw;
+	}
+	.fonction {
+		width: calc(6.2vw * 15);
+	}
+	.caseF, .f-header {
+		width: 6.2vw;
+		height: 6.2vw;
+	}
+	.caseF {
+		background-color: white;
+	}
+	.tranche {
+		width: 95%;
+	}
+	.tranche div {
+		margin-left: 2vw;
+	}
+	#tranche2 {
+		position: relative;
+		top: 4vh;
+	}
+	.fonction {
+		margin-top: 4vh;
+	}
+	#fonctions {
+		left: 1vw;
+		width: 90%;
+	}
+	#buttons button {
+		width: 8vw;
+		height: 4vh;
+		font-size: 2.5vh;
+	}
+	#buttons {
+		padding-top: 5vh;
+		width: 90%;
+	}
+	#options {
+		border-radius: 0;
+	}
+	#reset {
+		top: -3vh;
+		width: 8vw;
+		height: 4vh;
+		left: 74vw;
+		width: 10vw;
+		font-size: 3.2vh;
+	}
+	#terrain {
+		width: 80vw;
+		height: 80vw;
+		left: 10vw;
+	}
+	.case {
+		width: 8vw;
+		height: 8vw;
+	}
+	.piece {
+		width: 6vw;
+		height: 6vw;
+	}
+	#select {
+		width: 60vw;
+		left: 20vw;
+		font-size: 3.5vh;
+	}
+	#prev {
+		width: 8vw;
+		left: 10vw;
+		font-size: 4vh;
+	}
+	#suiv {
+		width: 8vw;
+		right: 10vw;
+		font-size: 4vh;
+	}
+	#nbrPerfect {
+		left: 10vw;
+		width: 20vw;
+		font-size: 2vh;
+	}
+	#time {
+		left: 33vw !important;
+		width: 35vw;
+	}
+	#speed, #slow {
+		width: 20%;
+		font-size: 2.5vh;
+	}
+	#time img {
+		top: 1.5vh;
+		left: 8vw;
+		width: 5vw;
+		height: 5vh;
+	}
+	#time p {
+		top: 2vw;
+		left: 15vw;
+		font-size: 2.7vh;
+	}
+	#start, #startBis {
+		width: 10vw;
+		left: 80vw;
+		font-size: 6vh; 
+	}
+	#stop {
+		width: 10vw;
+		left: 69vw;
+		font-size: 3.5vh;
+	}
+	.violet {
+		background-color: violet !important;
+	}
+
+	.bleu {
+		background-color: #44d0f9 !important;
+	}
+
+	.vert {
+		background-color: #00d000 !important;
+	}
+
+	.orange {
+		background-color: #e29500 !important;
+	}
+}

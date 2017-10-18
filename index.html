@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<title>Algo-Square</title>
+		<meta charset="utf-8">
+		<link type="text/css" rel="stylesheet" href="style.css">
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script type="text/javascript" src="javascript.js"></script>
+		<script src="https://use.fontawesome.com/64906f59e1.js"></script>
+	</head>
+	<body>
+		<header>
+			<div id="gagne"><div id="gagneBis"><h1>Gagné !</h1><button id="next">CONTINUER</button><button id="stay">RESTER</button></div></div>
+			<div id="perdu"><div id="perduBis"><button class="close">x</button><h1>Perdu !</h1></div></div>
+			<button id="start"><i class="fa fa-caret-right" aria-hidden="true"></i></button>
+			<button id="startBis"><i class="fa fa-caret-right" aria-hidden="true"></i></button>
+			<button id="stop"><i class="fa fa-stop" aria-hidden="true"></i></i></button>
+			<button id="select">Select. Niveau</button>
+			<button id="prev"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
+			<button id="suiv"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+			<div id="nbrPerfect"><p></p></div>
+			<div id="time">
+				<button id="slow"><i class="fa fa-minus" aria-hidden="true"></i></button>
+				<img src="img/speed.png" alt="icone vitesse"><p>6/10</p>
+				<button id="speed"><i class="fa fa-plus" aria-hidden="true"></i></button>
+			</div>
+			
+			
+		</header>
+		<main>
+			<div id="action">
+				<div id="options">
+					<div id="tranche1" class="tranche">
+						<div id="option1" class="option"><img class="turn" src="img/up.png"></div>
+						<div id="option2" class="option"><img class="turn" src="img/right.png"></div>
+						<div id="option3" class="option"><img class="turn" src="img/left.png"></div>
+						<div id="option4" class="option"><img src="img/brush1.png"></div>
+						<div id="option5" class="option"><img src="img/brush2.png"></div>
+						<div id="option20" class="option"><img src="img/brush3.png"></div>
+						<div id="option6" class="option"><img src="img/pause.png"></div>
+						<div id="option7" class="option"><img src="img/square1.png"></div>
+						<div id="option8" class="option"><img src="img/square2.png"></div>
+						<div id="option8-1" class="option"><img src="img/square3.png"></div>
+					</div>
+					<div id="tranche2" class="tranche">
+						<div id="option9" class="option"><img src="img/rouage1.png"></div>
+						<div id="option10" class="option"><img src="img/rouage2.png"></div>
+						<div id="option11" class="option"><img src="img/rouage3.png"></div>
+						<div id="option12" class="option"><img src="img/rouage4.png"></div>
+						<div id="option13" class="option"><img src="img/rouage5.png"></div>
+						<div id="option14" class="option"><img src="img/rouage6.png"></div>
+						<div id="option15" class="option"><img src="img/rouage7.png"></div>
+						<div id="option16" class="option"><img src="img/rouage8.png"></div>
+						<div id="option17" class="option"><img src="img/rouage9.png"></div>
+						<div id="option18" class="option"><img src="img/rouage10.png"></div>
+					</div>	
+				</div>
+				<div id="fonctions">
+					<div id="f1" class="fonction">
+						<div class="f-header"><img src="img/rouage1.png"></div>
+						<div id="f1-1" class="caseF"></div>
+						<div id="f1-2" class="caseF"></div>
+						<div id="f1-3" class="caseF"></div>
+						<div id="f1-4" class="caseF"></div>
+						<div id="f1-5" class="caseF"></div>
+						<div id="f1-6" class="caseF"></div>
+						<div id="f1-7" class="caseF"></div>
+						<div id="f1-8" class="caseF"></div>
+						<div id="f1-9" class="caseF"></div>
+						<div id="f1-10" class="caseF"></div>
+						<div id="f1-11" class="caseF"></div>
+						<div id="f1-12" class="caseF"></div>
+						<div id="f1-13" class="caseF"></div>
+						<div id="f1-14" class="caseF"></div>
+						<div id="f1-15" class="caseF"></div>
+					</div>
+					<div id="f2" class="fonction">
+						<div class="f-header"><img src="img/rouage2.png"></div>
+						<div id="f2-1" class="caseF"></div>
+						<div id="f2-2" class="caseF"></div>
+						<div id="f2-3" class="caseF"></div>
+						<div id="f2-4" class="caseF"></div>
+						<div id="f2-5" class="caseF"></div>
+						<div id="f2-6" class="caseF"></div>
+						<div id="f2-7" class="caseF"></div>
+						<div id="f2-8" class="caseF"></div>
+						<div id="f2-9" class="caseF"></div>
+						<div id="f2-10" class="caseF"></div>
+						<div id="f2-11" class="caseF"></div>
+						<div id="f2-12" class="caseF"></div>
+						<div id="f2-13" class="caseF"></div>
+						<div id="f2-14" class="caseF"></div>
+						<div id="f2-15" class="caseF"></div>
+					</div>
+					<div id="f3" class="fonction">
+						<div class="f-header"><img src="img/rouage3.png"></div>
+						<div id="f3-1" class="caseF"></div>
+						<div id="f3-2" class="caseF"></div>
+						<div id="f3-3" class="caseF"></div>
+						<div id="f3-4" class="caseF"></div>
+						<div id="f3-5" class="caseF"></div>
+						<div id="f3-6" class="caseF"></div>
+						<div id="f3-7" class="caseF"></div>
+						<div id="f3-8" class="caseF"></div>
+						<div id="f3-9" class="caseF"></div>
+						<div id="f3-10" class="caseF"></div>
+						<div id="f3-11" class="caseF"></div>
+						<div id="f3-12" class="caseF"></div>
+						<div id="f3-13" class="caseF"></div>
+						<div id="f3-14" class="caseF"></div>
+						<div id="f3-15" class="caseF"></div>
+					</div>
+					<div id="f4" class="fonction">
+						<div class="f-header"><img src="img/rouage4.png"></div>
+						<div id="f4-1" class="caseF"></div>
+						<div id="f4-2" class="caseF"></div>
+						<div id="f4-3" class="caseF"></div>
+						<div id="f4-4" class="caseF"></div>
+						<div id="f4-5" class="caseF"></div>
+						<div id="f4-6" class="caseF"></div>
+						<div id="f4-7" class="caseF"></div>
+						<div id="f4-8" class="caseF"></div>
+						<div id="f4-9" class="caseF"></div>
+						<div id="f4-10" class="caseF"></div>
+						<div id="f4-11" class="caseF"></div>
+						<div id="f4-12" class="caseF"></div>
+						<div id="f4-13" class="caseF"></div>
+						<div id="f4-14" class="caseF"></div>
+						<div id="f4-15" class="caseF"></div>
+					</div>
+					<div id="f5" class="fonction">
+						<div class="f-header"><img src="img/rouage5.png"></div>
+						<div id="f5-1" class="caseF"></div>
+						<div id="f5-2" class="caseF"></div>
+						<div id="f5-3" class="caseF"></div>
+						<div id="f5-4" class="caseF"></div>
+						<div id="f5-5" class="caseF"></div>
+						<div id="f5-6" class="caseF"></div>
+						<div id="f5-7" class="caseF"></div>
+						<div id="f5-8" class="caseF"></div>
+						<div id="f5-9" class="caseF"></div>
+						<div id="f5-10" class="caseF"></div>
+						<div id="f5-11" class="caseF"></div>
+						<div id="f5-12" class="caseF"></div>
+						<div id="f5-13" class="caseF"></div>
+						<div id="f5-14" class="caseF"></div>
+						<div id="f5-15" class="caseF"></div>
+					</div>
+					<div id="f6" class="fonction">
+						<div class="f-header"><img src="img/rouage6.png"></div>
+						<div id="f6-1" class="caseF"></div>
+						<div id="f6-2" class="caseF"></div>
+						<div id="f6-3" class="caseF"></div>
+						<div id="f6-4" class="caseF"></div>
+						<div id="f6-5" class="caseF"></div>
+						<div id="f6-6" class="caseF"></div>
+						<div id="f6-7" class="caseF"></div>
+						<div id="f6-8" class="caseF"></div>
+						<div id="f6-9" class="caseF"></div>
+						<div id="f6-10" class="caseF"></div>
+						<div id="f6-11" class="caseF"></div>
+						<div id="f6-12" class="caseF"></div>
+						<div id="f6-13" class="caseF"></div>
+						<div id="f6-14" class="caseF"></div>
+						<div id="f6-15" class="caseF"></div>
+					</div>
+					<div id="f7" class="fonction">
+						<div class="f-header"><img src="img/rouage7.png"></div>
+						<div id="f7-1" class="caseF"></div>
+						<div id="f7-2" class="caseF"></div>
+						<div id="f7-3" class="caseF"></div>
+						<div id="f7-4" class="caseF"></div>
+						<div id="f7-5" class="caseF"></div>
+						<div id="f7-6" class="caseF"></div>
+						<div id="f7-7" class="caseF"></div>
+						<div id="f7-8" class="caseF"></div>
+						<div id="f7-9" class="caseF"></div>
+						<div id="f7-10" class="caseF"></div>
+						<div id="f7-11" class="caseF"></div>
+						<div id="f7-12" class="caseF"></div>
+						<div id="f7-13" class="caseF"></div>
+						<div id="f7-14" class="caseF"></div>
+						<div id="f7-15" class="caseF"></div>
+					</div>
+					<div id="f8" class="fonction">
+						<div class="f-header"><img src="img/rouage8.png"></div>
+						<div id="f8-1" class="caseF"></div>
+						<div id="f8-2" class="caseF"></div>
+						<div id="f8-3" class="caseF"></div>
+						<div id="f8-4" class="caseF"></div>
+						<div id="f8-5" class="caseF"></div>
+						<div id="f8-6" class="caseF"></div>
+						<div id="f8-7" class="caseF"></div>
+						<div id="f8-8" class="caseF"></div>
+						<div id="f8-9" class="caseF"></div>
+						<div id="f8-10" class="caseF"></div>
+						<div id="f8-11" class="caseF"></div>
+						<div id="f8-12" class="caseF"></div>
+						<div id="f8-13" class="caseF"></div>
+						<div id="f8-14" class="caseF"></div>
+						<div id="f8-15" class="caseF"></div>
+					</div>
+					<div id="f9" class="fonction">
+						<div class="f-header"><img src="img/rouage9.png"></div>
+						<div id="f9-1" class="caseF"></div>
+						<div id="f9-2" class="caseF"></div>
+						<div id="f9-3" class="caseF"></div>
+						<div id="f9-4" class="caseF"></div>
+						<div id="f9-5" class="caseF"></div>
+						<div id="f9-6" class="caseF"></div>
+						<div id="f9-7" class="caseF"></div>
+						<div id="f9-8" class="caseF"></div>
+						<div id="f9-9" class="caseF"></div>
+						<div id="f9-10" class="caseF"></div>
+						<div id="f9-11" class="caseF"></div>
+						<div id="f9-12" class="caseF"></div>
+						<div id="f9-13" class="caseF"></div>
+						<div id="f9-14" class="caseF"></div>
+						<div id="f9-15" class="caseF"></div>
+					</div>
+					<div id="f10" class="fonction">
+						<div class="f-header"><img src="img/rouage10.png"></div>
+						<div id="f10-1" class="caseF"></div>
+						<div id="f10-2" class="caseF"></div>
+						<div id="f10-3" class="caseF"></div>
+						<div id="f10-4" class="caseF"></div>
+						<div id="f10-5" class="caseF"></div>
+						<div id="f10-6" class="caseF"></div>
+						<div id="f10-7" class="caseF"></div>
+						<div id="f10-8" class="caseF"></div>
+						<div id="f10-9" class="caseF"></div>
+						<div id="f10-10" class="caseF"></div>
+						<div id="f10-11" class="caseF"></div>
+						<div id="f10-12" class="caseF"></div>
+						<div id="f10-13" class="caseF"></div>
+						<div id="f10-14" class="caseF"></div>
+						<div id="f10-15" class="caseF"></div>
+					</div>
+					<div id="buttons">
+						<button id="addFonction"><i class="fa fa-plus" aria-hidden="true"></i></button>
+						<button id="removeFonction"><i class="fa fa-minus" aria-hidden="true"></i></button>
+					</div>
+					<button id="reset"><i class="fa fa-undo" aria-hidden="true"></i></button>
+				</div>
+			</div>
+			<div id="terrain">
+				<div id="A1" class="case blanc">
+				<div class="">
+					</div>
+				</div>
+				<div id="A2" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="A3" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="A4" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="A5" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="A6" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="A7" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="A8" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="A9" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="A10" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="B1" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="B2" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="B3" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="B4" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="B5" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="B6" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="B7" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="B8" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="B9" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="B10" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="C1" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="C2" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="C3" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="C4" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="C5" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="C6" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="C7" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="C8" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="C9" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="C10" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="D1" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="D2" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="D3" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="D4" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="D5" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="D6" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="D7" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="D8" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="D9" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="D10" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="E1" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="E2" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="E3" class="case blanc">
+					<div class=""></div>
+				</div>
+				<div id="E4" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="E5" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="E6" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="E7" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="E8" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="E9" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="E10" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="F1" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="F2" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="F3" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="F4" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="F5" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="F6" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="F7" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="F8" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="F9" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="F10" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="G1" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="G2" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="G3" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="G4" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="G5" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="G6" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="G7" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="G8" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="G9" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="G10" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="H1" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="H2" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="H3" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="H4" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="H5" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="H6" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="H7" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="H8" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="H9" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="H10" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="I1" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="I2" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="I3" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="I4" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="I5" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="I6" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="I7" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="I8" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="I9" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="I10" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="J1" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="J2" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="J3" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="J4" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="J5" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="J6" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="J7" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="J8" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="J9" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+				<div id="J10" class="case blanc">
+					<div class="">
+					</div>
+				</div>
+			</div>
+		</main>
+	</body>
+</html>
