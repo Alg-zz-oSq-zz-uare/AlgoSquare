@@ -20,10 +20,17 @@ $(document).ready(function() {
 	var pieceOrigin = new String();
 	var numPiece;
 	var perfect = new String("<span>? coups en</span><span>? fonctions</span>");
+
 	var movePlat = false;
 	var pathLong = 0;
 	var path = new Array();
 	path[0] = new String("00");
+
+	var switchCase = false;
+	var switchPos = new Array();
+	var switchColor = new Array();
+	var numSwitchCase = 0;
+	var countSwitch = new Array();
 
 	var posYtest;
 	var posXtest;
@@ -366,6 +373,8 @@ $(document).ready(function() {
 			pieceOrigin[1] = new String("00");
 			numPiece = 1;
 
+			switchCase = false;
+
 			movePlat = false;
 
 			perfect = new String("<span>1 coup en</span><span>1 fonction</span>");
@@ -399,6 +408,8 @@ $(document).ready(function() {
 			pieceOrigin[0] = new String("E7");
 			pieceOrigin[1] = new String("00");
 			numPiece = 1;
+
+			switchCase = false;
 
 			movePlat = false;
 
@@ -434,6 +445,8 @@ $(document).ready(function() {
 			pieceOrigin[1] = new String("00");
 			numPiece = 1;
 
+			switchCase = false;
+
 			movePlat = false;
 
 			perfect = new String("<span>2 coups en</span><span>1 fonction</span>");
@@ -467,6 +480,8 @@ $(document).ready(function() {
 			pieceOrigin[0] = new String("H8");
 			pieceOrigin[1] = new String("00");
 			numPiece = 1;
+
+			switchCase = false;
 
 			movePlat = false;
 
@@ -502,6 +517,8 @@ $(document).ready(function() {
 			pieceOrigin[1] = new String("00");
 			numPiece = 1;
 
+			switchCase = false;
+
 			movePlat = false;
 
 			perfect = new String("<span>3 coups en</span><span>1 fonction</span>");
@@ -535,6 +552,8 @@ $(document).ready(function() {
 			pieceOrigin[0] = new String("H9");
 			pieceOrigin[1] = new String("00");
 			numPiece = 1;
+
+			switchCase = false;
 
 			movePlat = false;
 
@@ -570,6 +589,8 @@ $(document).ready(function() {
 			pieceOrigin[1] = new String("00");
 			numPiece = 1;
 
+			switchCase = false;
+
 			movePlat = false;
 
 			perfect = new String("<span>9 coups en</span><span>2 fonctions</span>");
@@ -603,6 +624,8 @@ $(document).ready(function() {
 			pieceOrigin[0] = new String("C1");
 			pieceOrigin[1] = new String("00");
 			numPiece = 1;
+
+			switchCase = false;
 
 			movePlat = false;
 
@@ -638,6 +661,8 @@ $(document).ready(function() {
 			pieceOrigin[1] = new String("00");
 			numPiece = 1;
 
+			switchCase = false;
+
 			movePlat = false;
 
 			perfect = new String("<span>1 coup en</span><span>1 fonction</span>");
@@ -671,6 +696,8 @@ $(document).ready(function() {
 			pieceOrigin[0] = new String("J10");
 			pieceOrigin[1] = new String("00");
 			numPiece = 1;
+
+			switchCase = false;
 
 			movePlat = false;
 
@@ -706,6 +733,8 @@ $(document).ready(function() {
 			pieceOrigin[1] = new String("I7");
 			pieceOrigin[2] = new String("00");
 			numPiece = 2;
+
+			switchCase = false;
 
 			movePlat = false;
 
@@ -748,6 +777,8 @@ $(document).ready(function() {
 			pieceOrigin[8] = new String("00");
 			numPiece = 8;
 
+			switchCase = false;
+
 			movePlat = false;
 
 			perfect = new String("<span>9 coups en</span><span>2 fonctions</span>");
@@ -788,6 +819,8 @@ $(document).ready(function() {
 			pieceOrigin[7] = new String("I3");
 			pieceOrigin[8] = new String("00");
 			numPiece = 8;
+
+			switchCase = false;
 
 			movePlat = false;
 
@@ -831,6 +864,8 @@ $(document).ready(function() {
 			pieceOrigin[9] = new String("00");
 			numPiece = 9;
 
+			switchCase = false;
+
 			movePlat = false;
 
 			perfect = new String("<span>12 coups en</span><span>1 fonction</span>");
@@ -865,6 +900,8 @@ $(document).ready(function() {
 			pieceOrigin[1] = new String("00");
 			numPiece = 1;
 
+			switchCase = false;
+
 			movePlat = false;
 
 			perfect = new String("<span>7 coups en</span><span>1 fonction</span>");
@@ -898,6 +935,8 @@ $(document).ready(function() {
 			pieceOrigin[0] = new String("I4");
 			pieceOrigin[1] = new String("00");
 			numPiece = 1;
+
+			switchCase = false;
 
 			movePlat = false;
 
@@ -1513,6 +1552,7 @@ $(document).ready(function() {
 		var i = 0;
 		//var id = new String();
 		var tamp = 0;
+		var reachSwitch = 0;
 		//var dir;
 		var sous = 0;
 		var addSecure = 0;
@@ -1521,6 +1561,25 @@ $(document).ready(function() {
 		while(i < 15 && fonction[numFonction - 1][i] != 0 && over(posXtest, posYtest) == 0)
 		{
 			//dir = $("div.perso img").attr("src");
+			if(switchCase == true && fonction[numFonction - 1][i] < 9) {
+				while(reachSwitch < numSwitchCase) {
+					if(switchColor[reachSwitch][countSwitch[reachSwitch]] == "00") {
+						countSwitch[reachSwitch] = 0;
+					}
+					if(switchColor[reachSwitch][countSwitch[reachSwitch]] == "bleu") {
+						gridTest[getCoord(switchPos[reachSwitch], 'y')][getCoord(switchPos[reachSwitch], 'x')] = 3;
+					}
+					if(switchColor[reachSwitch][countSwitch[reachSwitch]] == "orange") {
+						gridTest[getCoord(switchPos[reachSwitch], 'y')][getCoord(switchPos[reachSwitch], 'x')] = 2;
+					}
+					if(switchColor[reachSwitch][countSwitch[reachSwitch]] == "vert") {
+						gridTest[getCoord(switchPos[reachSwitch], 'y')][getCoord(switchPos[reachSwitch], 'x')] = 1;
+					}
+					countSwitch[reachSwitch] += 1;
+					reachSwitch++;
+				}
+				reachSwitch = 0;
+			}
 			if(movePlat == true && fonction[numFonction - 1][i] < 9) {
 				if(posYtest == getCoord(path[move], 'y') && posXtest == getCoord(path[move], 'x'))
 				{
@@ -1705,12 +1764,40 @@ $(document).ready(function() {
 
 	function go() {
 		var i = 0;
+		var reachSwitch = 0;
 		var posPersoY = find_perso('y');
 		var posPersoX = find_perso('x');
 		var id = new String();
 		var dir;
 		var sous = 0;
 		dir = $("div.perso img").attr("src");
+		if(switchCase == true && (toDo[count] != "0" && stop != 1)) {
+				while(reachSwitch < numSwitchCase) {
+					if(switchColor[reachSwitch][countSwitch[reachSwitch]] == "00") {
+						countSwitch[reachSwitch] = 0;
+					}
+					if(switchColor[reachSwitch][countSwitch[reachSwitch]] == "bleu") {
+						grid[getCoord(switchPos[reachSwitch], 'y')][getCoord(switchPos[reachSwitch], 'x')] = 3;
+						$("#" + switchPos[reachSwitch]).removeClass("vert");
+						$("#" + switchPos[reachSwitch]).removeClass("orange");
+						$("#" + switchPos[reachSwitch]).addClass("bleu");
+					}
+					if(switchColor[reachSwitch][countSwitch[reachSwitch]] == "orange") {
+						grid[getCoord(switchPos[reachSwitch], 'y')][getCoord(switchPos[reachSwitch], 'x')] = 2;
+						$("#" + switchPos[reachSwitch]).removeClass("vert");
+						$("#" + switchPos[reachSwitch]).removeClass("bleu");
+						$("#" + switchPos[reachSwitch]).addClass("orange");
+					}
+					if(switchColor[reachSwitch][countSwitch[reachSwitch]] == "vert") {
+						grid[getCoord(switchPos[reachSwitch], 'y')][getCoord(switchPos[reachSwitch], 'x')] = 1;
+						$("#" + switchPos[reachSwitch]).removeClass("bleu");
+						$("#" + switchPos[reachSwitch]).removeClass("orange");
+						$("#" + switchPos[reachSwitch]).addClass("vert");
+					}
+					countSwitch[reachSwitch] += 1;
+					reachSwitch++;
+				}
+			}
 		if(movePlat == true && (toDo[count] != "0" && stop != 1)) {
 			if(posPersoY == getCoord(path[move], 'y') && posPersoX == getCoord(path[move], 'x'))
 			{
@@ -1913,6 +2000,7 @@ $(document).ready(function() {
 	});
 
 	$("#start").click(function () {
+		var i = 0;
 		posYtest = find_perso('y');
 		posXtest = find_perso('x');
 		dirTest = find_dir();
@@ -1924,6 +2012,11 @@ $(document).ready(function() {
 		executeFonction(1);
 		secure = 0;
 		move = 0;
+		while(i < numSwitchCase)
+		{
+			countSwitch[i] = 0;
+			i++;
+		}
 		interval = setInterval(go, temps);
 
 		$("#startBis").show();

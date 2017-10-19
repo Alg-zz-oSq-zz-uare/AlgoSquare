@@ -20,6 +20,39 @@
 			grid[8] = new Array(0,0,0,0,0,0,0,0,0,0);
 			grid[9] = new Array(0,0,0,0,0,0,0,0,0,0);
 
+			//EXEMPLE SWITCH && MOVE
+			/*
+
+			/////////////////
+
+			switchCase = true;
+			switchPos[0] = new String("E5");
+			switchColor[0] = new Array();
+				switchColor[0][0] = new String("orange");
+				switchColor[0][1] = new String("orange");
+				switchColor[0][2] = new String("bleu");
+				switchColor[0][3] = new String("orange");
+				switchColor[0][4] = new String("00");
+			countSwitch[0] = 0;
+			numSwitchCase = 1;
+
+			///////////////////
+
+			movePlat = true;
+			pathLong = 8;
+			path = new Array();
+			path[0] = new String("E6");
+			path[1] = new String("D6");
+			path[2] = new String("C6");
+			path[3] = new String("D6");
+			path[4] = new String("E6");
+			path[5] = new String("F6");
+			path[6] = new String("G6");
+			path[7] = new String("F6");
+
+			///////////////////
+			*/
+
 
 		function lvl1() {
 			posOrigin = new String("#E5");
