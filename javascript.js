@@ -6,7 +6,7 @@ $(document).ready(function() {
 	toDo[0] = new String('0');
 	var count = 0;
 	var interval;
-	var nbrLevel = 17;
+	var nbrLevel = 20;
 	var temps = 500;
 	var started = 0;
 
@@ -1004,6 +1004,142 @@ $(document).ready(function() {
 			grid[9] = new Array(0,0,0,0,0,0,0,0,0,0);
 		}
 
+		function lvl18() {
+			posOrigin = new String("#E2");
+			dirOrigin = 2;
+			pieceOrigin[0] = new String("E9");
+			pieceOrigin[1] = new String("00");
+			numPiece = 1;
+
+			movePlat = true;
+			pathLong = 8;
+			path = new Array();
+			path[0] = new String("F5");
+			path[1] = new String("F4");
+			path[2] = new String("E4");
+			path[3] = new String("D4");
+			path[4] = new String("D5");
+			path[5] = new String("D6");
+			path[6] = new String("E6");
+			path[7] = new String("F6");
+
+
+			perfect = new String("<span>6 coups en</span><span>1 fonction</span>");
+
+			gridTest[0] = new Array(0,0,0,0,0,0,0,0,0,0);
+			gridTest[1] = new Array(0,0,0,0,0,0,0,0,0,0);
+			gridTest[2] = new Array(0,0,0,0,0,0,0,0,0,0);
+			gridTest[3] = new Array(0,0,0,0,0,0,0,0,0,0);
+			gridTest[4] = new Array(0,1,1,1,1,4,1,1,1,0);
+			gridTest[5] = new Array(0,0,0,0,0,0,0,0,0,0);
+			gridTest[6] = new Array(0,0,0,0,0,0,0,0,0,0);
+			gridTest[7] = new Array(0,0,0,0,0,0,0,0,0,0);
+			gridTest[8] = new Array(0,0,0,0,0,0,0,0,0,0);
+			gridTest[9] = new Array(0,0,0,0,0,0,0,0,0,0);
+
+			grid[0] = new Array(0,0,0,0,0,0,0,0,0,0);
+			grid[1] = new Array(0,0,0,0,0,0,0,0,0,0);
+			grid[2] = new Array(0,0,0,0,0,0,0,0,0,0);
+			grid[3] = new Array(0,0,0,0,0,0,0,0,0,0);
+			grid[4] = new Array(0,1,1,0,1,0,1,1,1,0);
+			grid[5] = new Array(0,0,0,0,4,0,0,0,0,0);
+			grid[6] = new Array(0,0,0,0,0,0,0,0,0,0);
+			grid[7] = new Array(0,0,0,0,0,0,0,0,0,0);
+			grid[8] = new Array(0,0,0,0,0,0,0,0,0,0);
+			grid[9] = new Array(0,0,0,0,0,0,0,0,0,0);
+		}
+
+		function lvl19() {
+			posOrigin = new String("#E2");
+			dirOrigin = 2;
+			pieceOrigin[0] = new String("E9");
+			pieceOrigin[1] = new String("00");
+			numPiece = 1;
+
+			movePlat = true;
+			pathLong = 2;
+			path = new Array();
+			path[0] = new String("E8");
+			path[1] = new String("E3");
+
+			perfect = new String("<span>2 coups en</span><span>1 fonction</span>");
+
+			gridTest[0] = new Array(0,0,0,0,0,0,0,0,0,0);
+			gridTest[1] = new Array(0,0,0,0,0,0,0,0,0,0);
+			gridTest[2] = new Array(0,0,0,0,0,0,0,0,0,0);
+			gridTest[3] = new Array(0,0,0,0,0,0,0,0,0,0);
+			gridTest[4] = new Array(0,1,0,0,0,0,0,4,1,0);
+			gridTest[5] = new Array(0,0,0,0,0,0,0,0,0,0);
+			gridTest[6] = new Array(0,0,0,0,0,0,0,0,0,0);
+			gridTest[7] = new Array(0,0,0,0,0,0,0,0,0,0);
+			gridTest[8] = new Array(0,0,0,0,0,0,0,0,0,0);
+			gridTest[9] = new Array(0,0,0,0,0,0,0,0,0,0);
+
+			grid[0] = new Array(0,0,0,0,0,0,0,0,0,0);
+			grid[1] = new Array(0,0,0,0,0,0,0,0,0,0);
+			grid[2] = new Array(0,0,0,0,0,0,0,0,0,0);
+			grid[3] = new Array(0,0,0,0,0,0,0,0,0,0);
+			grid[4] = new Array(0,1,0,0,0,0,0,4,1,0);
+			grid[5] = new Array(0,0,0,0,0,0,0,0,0,0);
+			grid[6] = new Array(0,0,0,0,0,0,0,0,0,0);
+			grid[7] = new Array(0,0,0,0,0,0,0,0,0,0);
+			grid[8] = new Array(0,0,0,0,0,0,0,0,0,0);
+			grid[9] = new Array(0,0,0,0,0,0,0,0,0,0);
+		}
+		function lvl20() {
+			posOrigin = new String("#E4");
+			dirOrigin = 2;
+			pieceOrigin[0] = new String("E7");
+			pieceOrigin[1] = new String("A3");
+			pieceOrigin[2] = new String("C1");
+			pieceOrigin[3] = new String("A8");
+			pieceOrigin[4] = new String("C10");
+			pieceOrigin[5] = new String("H10");
+			pieceOrigin[6] = new String("J8");
+			pieceOrigin[7] = new String("J3");
+			pieceOrigin[8] = new String("H1");
+			pieceOrigin[9] = new String("00");
+			numPiece = 9;
+
+			movePlat = true;
+			pathLong = 10;
+			path = new Array();
+			path[0] = new String("E5");
+			path[1] = new String("E5");
+			path[2] = new String("C3");
+			path[3] = new String("C3");
+			path[4] = new String("H8");
+			path[5] = new String("H8");
+			path[6] = new String("C8");
+			path[7] = new String("C8");
+			path[8] = new String("H3");
+			path[9] = new String("H3");
+
+			perfect = new String("<span>2 coups en</span><span>1 fonction</span>");
+
+			gridTest[0] = new Array(1,1,1,0,0,0,0,1,1,1);
+			gridTest[1] = new Array(1,0,1,0,0,0,0,1,0,1);
+			gridTest[2] = new Array(1,1,0,0,0,0,0,0,1,1);
+			gridTest[3] = new Array(0,0,0,0,0,0,0,0,0,0);
+			gridTest[4] = new Array(0,0,0,1,4,1,1,0,0,0);
+			gridTest[5] = new Array(0,0,0,0,0,0,0,0,0,0);
+			gridTest[6] = new Array(0,0,0,0,0,0,0,0,0,0);
+			gridTest[7] = new Array(1,1,0,0,0,0,0,0,1,1);
+			gridTest[8] = new Array(1,0,1,0,0,0,0,1,0,1);
+			gridTest[9] = new Array(1,1,1,0,0,0,0,1,1,1);
+
+			grid[0] = new Array(1,1,1,0,0,0,0,1,1,1);
+			grid[1] = new Array(1,0,1,0,0,0,0,1,0,1);
+			grid[2] = new Array(1,1,0,0,0,0,0,0,1,1);
+			grid[3] = new Array(0,0,0,0,0,0,0,0,0,0);
+			grid[4] = new Array(0,0,0,1,4,1,1,0,0,0);
+			grid[5] = new Array(0,0,0,0,0,0,0,0,0,0);
+			grid[6] = new Array(0,0,0,0,0,0,0,0,0,0);
+			grid[7] = new Array(1,1,0,0,0,0,0,0,1,1);
+			grid[8] = new Array(1,0,1,0,0,0,0,1,0,1);
+			grid[9] = new Array(1,1,1,0,0,0,0,1,1,1);
+		}
+
 	function initFonction () {
 		var y = 0;
 		var x = 0;
@@ -1343,7 +1479,7 @@ $(document).ready(function() {
 
 	function update_toDo(numAction) {
 		var i = 0;
-		console.log("numAction = " + numAction);
+		//console.log("numAction = " + numAction);
 		while(toDo[i] != "0")
 		{
 			i++;
@@ -1367,7 +1503,7 @@ $(document).ready(function() {
 		// 	i++;
 		// }
 		// toDo += '0';
-		console.log("toDo à jour = " + toDo[i]);
+		//console.log("toDo à jour = " + toDo[i]);
 	}
 
 	function over(posPersoX, posPersoY) {
@@ -1381,19 +1517,43 @@ $(document).ready(function() {
 		// console.log("posPersoX = " + posPersoX);
 		// //console.log("grid["+ posPersoY +"]["+ posPersoX +"] = " + grid[posPersoY][posPersoX]);
 		// console.log("////////////");
+		console.log("//////////////////");
+			console.log("grid");
+			console.log(grid);
+			console.log("gridTest");
+			console.log(gridTest);
+		console.log("//////////////////");
 		if(numPiece <= 0)
 		{
-			console.log("over 1");
+			console.log("x final = " + posPersoX);
+			console.log("y final = " + posPersoY);
+			/*console.log("grid");
+			console.log(grid);
+			console.log("gridTest");
+			console.log(gridTest);
+			console.log("over good");*/
 			return 2;
 		}
 		if(posPersoY < 0 || posPersoX < 0 || posPersoY > 9 || posPersoX > 9)
 		{
-			console.log("over 2");
+			console.log("x final = " + posPersoX);
+			console.log("y final = " + posPersoY);
+			/*console.log("grid");
+			console.log(grid);
+			console.log("gridTest");
+			console.log(gridTest);
+			console.log("over out");*/
 			return 1;
 		}
 		if(gridTest[posPersoY][posPersoX] == 0)
 		{
-			console.log("over 3");
+			console.log("x final = " + posPersoX);
+			console.log("y final = " + posPersoY);
+			/*console.log("grid");
+			console.log(grid);
+			console.log("gridTest");
+			console.log(gridTest);
+			console.log("over blanc");*/
 			return 1;
 		}
 		/*while(y < 10)
@@ -1526,6 +1686,21 @@ $(document).ready(function() {
 			level = 17;
 			lvl17();
 		}
+		else if(level == 18 || level == '18')
+		{
+			level = 18;
+			lvl18();
+		}
+		else if(level == 19 || level == '19')
+		{
+			level = 19;
+			lvl19();
+		}
+		else if(level == 20 || level == '20')
+		{
+			level = 20;
+			lvl20();
+		}
 		else
 		{
 			lvl1();
@@ -1595,12 +1770,12 @@ $(document).ready(function() {
 					console.log("y = " + posYtest);
 					console.log("x = " + posXtest);
 				}
-				gridTest[getCoord(path[move][0], 'y')][getCoord(path[move], 'x')] = 0;
+				gridTest[getCoord(path[move], 'y')][getCoord(path[move], 'x')] = 0;
 				move++;
 				if(move > pathLong - 1) {
 					move = 0;
 				}
-				gridTest[getCoord(path[move][0], 'y')][getCoord(path[move], 'x')] = 4;
+				gridTest[getCoord(path[move], 'y')][getCoord(path[move], 'x')] = 4;
 				console.log("////// BOUGE");
 				console.log("gridTest["+posYtest+"]["+posXtest+"] = " +gridTest[posYtest][posXtest]);
 				console.log("path["+move+"] = " + path[move]);
@@ -1822,13 +1997,13 @@ $(document).ready(function() {
 				$(id + " div").addClass("perso");
 				$(id + " div").append("<img src=\"img/curseur"+dir[11]+".png\" alt=\"curseur\">");
 			}
-			grid[getCoord(path[move][0], 'y')][getCoord(path[move], 'x')] = 0;
+			grid[getCoord(path[move], 'y')][getCoord(path[move], 'x')] = 0;
 			$("#"+path[move]).removeClass("violet");
 			move++;
 			if(move > pathLong - 1) {
 				move = 0;
 			}
-			grid[getCoord(path[move][0], 'y')][getCoord(path[move], 'x')] = 4;
+			grid[getCoord(path[move], 'y')][getCoord(path[move], 'x')] = 4;
 			$("#"+path[move]).addClass("violet");
 			console.log("//////");
 			console.log("coucou ! move = " + move);

@@ -659,3 +659,134 @@
 			grid[8] = new Array(0,0,0,0,0,0,0,0,0,0);
 			grid[9] = new Array(0,0,0,0,0,0,0,0,0,0);
 		}
+
+		function lvl18() {
+			posOrigin = new String("#E2");
+			dirOrigin = 2;
+			pieceOrigin[0] = new String("E9");
+			pieceOrigin[1] = new String("00");
+			numPiece = 1;
+
+			movePlat = true;
+			pathLong = 8;
+			path = new Array();
+			path[0] = new String("F5");
+			path[1] = new String("F4");
+			path[2] = new String("E4");
+			path[3] = new String("D4");
+			path[4] = new String("D5");
+			path[5] = new String("D6");
+			path[6] = new String("E6");
+			path[7] = new String("F6");
+
+
+			perfect = new String("<span>6 coups en</span><span>1 fonction</span>");
+
+			gridTest[0] = new Array(0,0,0,0,0,0,0,0,0,0);
+			gridTest[1] = new Array(0,0,0,0,0,0,0,0,0,0);
+			gridTest[2] = new Array(0,0,0,0,0,0,0,0,0,0);
+			gridTest[3] = new Array(0,0,0,0,0,0,0,0,0,0);
+			gridTest[4] = new Array(0,1,1,1,1,4,1,1,1,0);
+			gridTest[5] = new Array(0,0,0,0,0,0,0,0,0,0);
+			gridTest[6] = new Array(0,0,0,0,0,0,0,0,0,0);
+			gridTest[7] = new Array(0,0,0,0,0,0,0,0,0,0);
+			gridTest[8] = new Array(0,0,0,0,0,0,0,0,0,0);
+			gridTest[9] = new Array(0,0,0,0,0,0,0,0,0,0);
+
+			grid[0] = new Array(0,0,0,0,0,0,0,0,0,0);
+			grid[1] = new Array(0,0,0,0,0,0,0,0,0,0);
+			grid[2] = new Array(0,0,0,0,0,0,0,0,0,0);
+			grid[3] = new Array(0,0,0,0,0,0,0,0,0,0);
+			grid[4] = new Array(0,1,1,0,1,0,1,1,1,0);
+			grid[5] = new Array(0,0,0,0,4,0,0,0,0,0);
+			grid[6] = new Array(0,0,0,0,0,0,0,0,0,0);
+			grid[7] = new Array(0,0,0,0,0,0,0,0,0,0);
+			grid[8] = new Array(0,0,0,0,0,0,0,0,0,0);
+			grid[9] = new Array(0,0,0,0,0,0,0,0,0,0);
+		}
+
+		function lvl19() {
+			posOrigin = new String("#E2");
+			dirOrigin = 2;
+			pieceOrigin[0] = new String("E9");
+			pieceOrigin[1] = new String("00");
+			numPiece = 1;
+
+			movePlat = true;
+			pathLong = 2;
+			path = new Array();
+			path[0] = new String("E7");
+			path[1] = new String("E4");
+
+			perfect = new String("<span>6 coups en</span><span>1 fonction</span>");
+
+			gridTest[0] = new Array(0,0,0,0,0,0,0,0,0,0);
+			gridTest[1] = new Array(0,0,0,0,0,0,0,0,0,0);
+			gridTest[2] = new Array(0,0,0,0,0,0,0,0,0,0);
+			gridTest[3] = new Array(0,0,0,0,0,0,0,0,0,0);
+			gridTest[4] = new Array(0,1,1,0,0,0,4,1,1,0);
+			gridTest[5] = new Array(0,0,0,0,0,0,0,0,0,0);
+			gridTest[6] = new Array(0,0,0,0,0,0,0,0,0,0);
+			gridTest[7] = new Array(0,0,0,0,0,0,0,0,0,0);
+			gridTest[8] = new Array(0,0,0,0,0,0,0,0,0,0);
+			gridTest[9] = new Array(0,0,0,0,0,0,0,0,0,0);
+
+			grid[0] = new Array(0,0,0,0,0,0,0,0,0,0);
+			grid[1] = new Array(0,0,0,0,0,0,0,0,0,0);
+			grid[2] = new Array(0,0,0,0,0,0,0,0,0,0);
+			grid[3] = new Array(0,0,0,0,0,0,0,0,0,0);
+			grid[4] = new Array(0,1,1,0,0,0,4,1,1,0);
+			grid[5] = new Array(0,0,0,0,0,0,0,0,0,0);
+			grid[6] = new Array(0,0,0,0,0,0,0,0,0,0);
+			grid[7] = new Array(0,0,0,0,0,0,0,0,0,0);
+			grid[8] = new Array(0,0,0,0,0,0,0,0,0,0);
+			grid[9] = new Array(0,0,0,0,0,0,0,0,0,0);
+		}
+		function lvl20() {
+			posOrigin = new String("#E4");
+			dirOrigin = 2;
+			pieceOrigin[0] = new String("E7");
+			pieceOrigin[1] = new String("A3");
+			pieceOrigin[2] = new String("C1");
+			pieceOrigin[3] = new String("A8");
+			pieceOrigin[4] = new String("C10");
+			pieceOrigin[5] = new String("H10");
+			pieceOrigin[6] = new String("J8");
+			pieceOrigin[7] = new String("J3");
+			pieceOrigin[8] = new String("H1");
+			pieceOrigin[9] = new String("00");
+			numPiece = 9;
+
+			movePlat = true;
+			pathLong = 5;
+			path = new Array();
+			path[0] = new String("E5");
+			path[1] = new String("C3");
+			path[2] = new String("H8");
+			path[3] = new String("C8");
+			path[4] = new String("H3");
+
+			perfect = new String("<span>2 coups en</span><span>1 fonction</span>");
+
+			gridTest[0] = new Array(1,1,1,0,0,0,0,1,1,1);
+			gridTest[1] = new Array(1,0,1,0,0,0,0,1,0,1);
+			gridTest[2] = new Array(1,1,0,0,0,0,0,0,1,1);
+			gridTest[3] = new Array(0,0,0,0,0,0,0,0,0,0);
+			gridTest[4] = new Array(0,0,0,1,4,1,1,0,0,0);
+			gridTest[5] = new Array(0,0,0,0,0,0,0,0,0,0);
+			gridTest[6] = new Array(0,0,0,0,0,0,0,0,0,0);
+			gridTest[7] = new Array(1,1,0,0,0,0,0,0,1,1);
+			gridTest[8] = new Array(1,0,1,0,0,0,0,1,0,1);
+			gridTest[9] = new Array(1,1,1,0,0,0,0,1,1,1);
+
+			grid[0] = new Array(1,1,1,0,0,0,0,1,1,1);
+			grid[1] = new Array(1,0,1,0,0,0,0,1,0,1);
+			grid[2] = new Array(1,1,0,0,0,0,0,0,1,1);
+			grid[3] = new Array(0,0,0,0,0,0,0,0,0,0);
+			grid[4] = new Array(0,0,0,1,4,1,1,0,0,0);
+			grid[5] = new Array(0,0,0,0,0,0,0,0,0,0);
+			grid[6] = new Array(0,0,0,0,0,0,0,0,0,0);
+			grid[7] = new Array(1,1,0,0,0,0,0,0,1,1);
+			grid[8] = new Array(1,0,1,0,0,0,0,1,0,1);
+			grid[9] = new Array(1,1,1,0,0,0,0,1,1,1);
+		}
