@@ -1030,8 +1030,8 @@ $(document).ready(function() {
 			gridTest[1] = new Array(0,0,0,0,0,0,0,0,0,0);
 			gridTest[2] = new Array(0,0,0,0,0,0,0,0,0,0);
 			gridTest[3] = new Array(0,0,0,0,0,0,0,0,0,0);
-			gridTest[4] = new Array(0,1,1,1,1,4,1,1,1,0);
-			gridTest[5] = new Array(0,0,0,0,0,0,0,0,0,0);
+			gridTest[4] = new Array(0,1,1,0,1,0,1,1,1,0);
+			gridTest[5] = new Array(0,0,0,0,4,0,0,0,0,0);
 			gridTest[6] = new Array(0,0,0,0,0,0,0,0,0,0);
 			gridTest[7] = new Array(0,0,0,0,0,0,0,0,0,0);
 			gridTest[8] = new Array(0,0,0,0,0,0,0,0,0,0);
@@ -1115,7 +1115,7 @@ $(document).ready(function() {
 			path[8] = new String("H3");
 			path[9] = new String("H3");
 
-			perfect = new String("<span>2 coups en</span><span>1 fonction</span>");
+			perfect = new String("<span>19 coups en</span><span>3 fonctions</span>");
 
 			gridTest[0] = new Array(1,1,1,0,0,0,0,1,1,1);
 			gridTest[1] = new Array(1,0,1,0,0,0,0,1,0,1);
@@ -1517,21 +1517,38 @@ $(document).ready(function() {
 		// console.log("posPersoX = " + posPersoX);
 		// //console.log("grid["+ posPersoY +"]["+ posPersoX +"] = " + grid[posPersoY][posPersoX]);
 		// console.log("////////////");
-		console.log("//////////////////");
+		/*console.log("//////////////////");
 			console.log("grid");
 			console.log(grid);
 			console.log("gridTest");
 			console.log(gridTest);
-		console.log("//////////////////");
+		console.log("//////////////////");*/
 		if(numPiece <= 0)
 		{
 			console.log("x final = " + posPersoX);
 			console.log("y final = " + posPersoY);
-			/*console.log("grid");
-			console.log(grid);
+			console.log("grid");
+			/*console.log(grid);
 			console.log("gridTest");
-			console.log(gridTest);
-			console.log("over good");*/
+			console.log(gridTest);*/
+			console.log("gridTest["+posPersoY+"]["+posPersoX+"] = " + gridTest[posPersoY][posPersoX]);
+			console.log("grid["+posPersoY+"]["+posPersoX+"] = " + grid[posPersoY][posPersoX]);
+			x = 0;
+			y = 0;
+			while(y < 10)
+			{
+				while(x < 10)
+				{
+					if(grid[y][x] == 4)
+						console.log("grid["+y+"]["+x+"] = " + grid[y][x]);
+					if(gridTest[y][x] == 4)
+						console.log("gridTest["+y+"]["+x+"] = " + gridTest[y][x]);
+					x++;
+				}
+				x = 0;
+				y++;
+			}
+			console.log("over good");
 			return 2;
 		}
 		if(posPersoY < 0 || posPersoX < 0 || posPersoY > 9 || posPersoX > 9)
@@ -1541,8 +1558,25 @@ $(document).ready(function() {
 			/*console.log("grid");
 			console.log(grid);
 			console.log("gridTest");
-			console.log(gridTest);
-			console.log("over out");*/
+			console.log(gridTest);*/
+			console.log("gridTest["+posPersoY+"]["+posPersoX+"] = " + gridTest[posPersoY][posPersoX]);
+			console.log("grid["+posPersoY+"]["+posPersoX+"] = " + grid[posPersoY][posPersoX]);
+			x = 0;
+			y = 0;
+			while(y < 10)
+			{
+				while(x < 10)
+				{
+					if(grid[y][x] == 4)
+						console.log("grid["+y+"]["+x+"] = " + grid[y][x]);
+					if(gridTest[y][x] == 4)
+						console.log("gridTest["+y+"]["+x+"] = " + gridTest[y][x]);
+					x++;
+				}
+				x = 0;
+				y++;
+			}
+			console.log("over out");
 			return 1;
 		}
 		if(gridTest[posPersoY][posPersoX] == 0)
@@ -1552,8 +1586,25 @@ $(document).ready(function() {
 			/*console.log("grid");
 			console.log(grid);
 			console.log("gridTest");
-			console.log(gridTest);
-			console.log("over blanc");*/
+			console.log(gridTest);*/
+			console.log("gridTest["+posPersoY+"]["+posPersoX+"] = " + gridTest[posPersoY][posPersoX]);
+			console.log("grid["+posPersoY+"]["+posPersoX+"] = " + grid[posPersoY][posPersoX]);
+			x = 0;
+			y = 0;
+			while(y < 10)
+			{
+				while(x < 10)
+				{
+					if(grid[y][x] == 4)
+						console.log("grid["+y+"]["+x+"] = " + grid[y][x]);
+					if(gridTest[y][x] == 4)
+						console.log("gridTest["+y+"]["+x+"] = " + gridTest[y][x]);
+					x++;
+				}
+				x = 0;
+				y++;
+			}
+			console.log("over blanc");
 			return 1;
 		}
 		/*while(y < 10)
@@ -1736,7 +1787,25 @@ $(document).ready(function() {
 		while(i < 15 && fonction[numFonction - 1][i] != 0 && over(posXtest, posYtest) == 0)
 		{
 			//dir = $("div.perso img").attr("src");
-			if(switchCase == true && fonction[numFonction - 1][i] < 9) {
+			if((fonction[numFonction - 1][i] > 100 && fonction[numFonction - 1][i] < 200) && gridTest[posYtest][posXtest] == 1)
+			{
+				sous = 100;
+				fonction[numFonction - 1][i] -= 100;
+				console.log("condition: vert");
+			}
+			else if((fonction[numFonction - 1][i] > 200 && fonction[numFonction - 1][i] < 300) && gridTest[posYtest][posXtest] == 2)
+			{
+				sous = 200;
+				fonction[numFonction - 1][i] -= 200;
+				console.log("condition: orange");
+			}
+			else if(fonction[numFonction - 1][i] > 300 && gridTest[posYtest][posXtest] == 3)
+			{
+				sous = 300;
+				fonction[numFonction - 1][i] -= 300;
+				console.log("condition: bleu");
+			}
+			if(switchCase == true && (fonction[numFonction - 1][i] < 9 || fonction[numFonction - 1][i] == 20)) {
 				while(reachSwitch < numSwitchCase) {
 					if(switchColor[reachSwitch][countSwitch[reachSwitch]] == "00") {
 						countSwitch[reachSwitch] = 0;
@@ -1755,7 +1824,7 @@ $(document).ready(function() {
 				}
 				reachSwitch = 0;
 			}
-			if(movePlat == true && fonction[numFonction - 1][i] < 9) {
+			if(movePlat == true && (fonction[numFonction - 1][i] < 9 || fonction[numFonction - 1][i] == 20)) {
 				if(posYtest == getCoord(path[move], 'y') && posXtest == getCoord(path[move], 'x'))
 				{
 					console.log("/////////// ALLER, ON EMBARQUE !!! \\\\\\\\\\\\");
@@ -1777,27 +1846,10 @@ $(document).ready(function() {
 				}
 				gridTest[getCoord(path[move], 'y')][getCoord(path[move], 'x')] = 4;
 				console.log("////// BOUGE");
+				console.log("fonction["+(numFonction - 1)+"]["+i+"] = " + fonction[numFonction - 1][i]);
 				console.log("gridTest["+posYtest+"]["+posXtest+"] = " +gridTest[posYtest][posXtest]);
-				console.log("path["+move+"] = " + path[move]);
+				console.log("plateforme mouvante est (pour le reste du tour) en " + path[move]);
 				console.log("///////////");
-			}
-			if((fonction[numFonction - 1][i] > 100 && fonction[numFonction - 1][i] < 200) && gridTest[posYtest][posXtest] == 1)
-			{
-				sous = 100;
-				fonction[numFonction - 1][i] -= 100;
-				console.log("condition: vert");
-			}
-			else if((fonction[numFonction - 1][i] > 200 && fonction[numFonction - 1][i] < 300) && gridTest[posYtest][posXtest] == 2)
-			{
-				sous = 200;
-				fonction[numFonction - 1][i] -= 200;
-				console.log("condition: orange");
-			}
-			else if(fonction[numFonction - 1][i] > 300 && gridTest[posYtest][posXtest] == 3)
-			{
-				sous = 300;
-				fonction[numFonction - 1][i] -= 300;
-				console.log("condition: bleu");
 			}
 			if(fonction[numFonction - 1][i] == 1)
 			{
@@ -1806,7 +1858,7 @@ $(document).ready(function() {
 					fonction[numFonction - 1][i] += sous;
 					sous = 0;
 				}
-				console.log("in //// dir = " + dirTest);
+				//console.log("in //// dir = " + dirTest);
 				if(dirTest == 1)
 				{
 					posYtest -= 1;
@@ -1832,10 +1884,10 @@ $(document).ready(function() {
 				console.log("avance");
 				console.log("y = " + posYtest);
 				console.log("x = " + posXtest);
-				if(movePlat == true) {
+				if(movePlat == true && posYtest < 10 && posYtest >= 0 && posXtest < 10 && posXtest >= 0) {
 					console.log("gridTest["+posYtest+"]["+posXtest+"] = " +gridTest[posYtest][posXtest]);
 					console.log("gridTest["+getCoord(path[move], 'y')+"]["+getCoord(path[move], 'x')+"] = " +gridTest[getCoord(path[move], 'y')][getCoord(path[move], 'x')]);
-					console.log("path["+move+"] = " + path[move]);
+					console.log("plateforme mouvante est en " + path[move]);
 				}
 				update_toDo("1");
 			}
@@ -1972,6 +2024,7 @@ $(document).ready(function() {
 					countSwitch[reachSwitch] += 1;
 					reachSwitch++;
 				}
+				reachSwitch = 0;
 			}
 		if(movePlat == true && (toDo[count] != "0" && stop != 1)) {
 			if(posPersoY == getCoord(path[move], 'y') && posPersoX == getCoord(path[move], 'x'))
@@ -2006,7 +2059,9 @@ $(document).ready(function() {
 			grid[getCoord(path[move], 'y')][getCoord(path[move], 'x')] = 4;
 			$("#"+path[move]).addClass("violet");
 			console.log("//////");
-			console.log("coucou ! move = " + move);
+			//console.log("coucou ! move = " + move);
+			console.log("count = "+ count);
+			console.log("plateforme mouvante est (pour le reste du tour) en " + path[move]);
 			console.log("posPersoY = " + posPersoY);
 			console.log("posPersoX = " + posPersoX);
 			console.log("grid["+posPersoY+"]["+posPersoX+"] = " +grid[posPersoY][posPersoX]);

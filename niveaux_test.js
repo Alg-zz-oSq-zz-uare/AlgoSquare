@@ -686,8 +686,8 @@
 			gridTest[1] = new Array(0,0,0,0,0,0,0,0,0,0);
 			gridTest[2] = new Array(0,0,0,0,0,0,0,0,0,0);
 			gridTest[3] = new Array(0,0,0,0,0,0,0,0,0,0);
-			gridTest[4] = new Array(0,1,1,1,1,4,1,1,1,0);
-			gridTest[5] = new Array(0,0,0,0,0,0,0,0,0,0);
+			gridTest[4] = new Array(0,1,1,0,1,0,1,1,1,0);
+			gridTest[5] = new Array(0,0,0,0,4,0,0,0,0,0);
 			gridTest[6] = new Array(0,0,0,0,0,0,0,0,0,0);
 			gridTest[7] = new Array(0,0,0,0,0,0,0,0,0,0);
 			gridTest[8] = new Array(0,0,0,0,0,0,0,0,0,0);
@@ -715,16 +715,16 @@
 			movePlat = true;
 			pathLong = 2;
 			path = new Array();
-			path[0] = new String("E7");
-			path[1] = new String("E4");
+			path[0] = new String("E8");
+			path[1] = new String("E3");
 
-			perfect = new String("<span>6 coups en</span><span>1 fonction</span>");
+			perfect = new String("<span>2 coups en</span><span>1 fonction</span>");
 
 			gridTest[0] = new Array(0,0,0,0,0,0,0,0,0,0);
 			gridTest[1] = new Array(0,0,0,0,0,0,0,0,0,0);
 			gridTest[2] = new Array(0,0,0,0,0,0,0,0,0,0);
 			gridTest[3] = new Array(0,0,0,0,0,0,0,0,0,0);
-			gridTest[4] = new Array(0,1,1,0,0,0,4,1,1,0);
+			gridTest[4] = new Array(0,1,0,0,0,0,0,4,1,0);
 			gridTest[5] = new Array(0,0,0,0,0,0,0,0,0,0);
 			gridTest[6] = new Array(0,0,0,0,0,0,0,0,0,0);
 			gridTest[7] = new Array(0,0,0,0,0,0,0,0,0,0);
@@ -735,7 +735,7 @@
 			grid[1] = new Array(0,0,0,0,0,0,0,0,0,0);
 			grid[2] = new Array(0,0,0,0,0,0,0,0,0,0);
 			grid[3] = new Array(0,0,0,0,0,0,0,0,0,0);
-			grid[4] = new Array(0,1,1,0,0,0,4,1,1,0);
+			grid[4] = new Array(0,1,0,0,0,0,0,4,1,0);
 			grid[5] = new Array(0,0,0,0,0,0,0,0,0,0);
 			grid[6] = new Array(0,0,0,0,0,0,0,0,0,0);
 			grid[7] = new Array(0,0,0,0,0,0,0,0,0,0);
@@ -758,15 +758,20 @@
 			numPiece = 9;
 
 			movePlat = true;
-			pathLong = 5;
+			pathLong = 10;
 			path = new Array();
 			path[0] = new String("E5");
-			path[1] = new String("C3");
-			path[2] = new String("H8");
-			path[3] = new String("C8");
-			path[4] = new String("H3");
+			path[1] = new String("E5");
+			path[2] = new String("C3");
+			path[3] = new String("C3");
+			path[4] = new String("H8");
+			path[5] = new String("H8");
+			path[6] = new String("C8");
+			path[7] = new String("C8");
+			path[8] = new String("H3");
+			path[9] = new String("H3");
 
-			perfect = new String("<span>2 coups en</span><span>1 fonction</span>");
+			perfect = new String("<span>19 coups en</span><span>3 fonctions</span>");
 
 			gridTest[0] = new Array(1,1,1,0,0,0,0,1,1,1);
 			gridTest[1] = new Array(1,0,1,0,0,0,0,1,0,1);
