@@ -9,6 +9,9 @@ $(document).ready(function() {
 	var nbrLevel = 20;
 	var temps = 500;
 	var started = 0;
+	var isOn = new Array();
+	var followIsOn = 0;
+	var lastMove = new String("00");
 
 	var secure = 0;
 	var stop = 0;
@@ -1767,6 +1770,9 @@ $(document).ready(function() {
 	function reset(nouv) {
 		toDo = new Array();
 		toDo[0] = new String("0");
+		isOn = new Array();
+		followIsOn = 0;
+		lastMove = new String("00");
 		count = 0;
 		initLevel(nouv);
 		reset_html();
@@ -1850,6 +1856,12 @@ $(document).ready(function() {
 				console.log("gridTest["+posYtest+"]["+posXtest+"] = " +gridTest[posYtest][posXtest]);
 				console.log("plateforme mouvante est (pour le reste du tour) en " + path[move]);
 				console.log("///////////");
+			}
+			if(fonction[numFonction - 1][i] > 0 && (fonction[numFonction - 1][i] < 9 || fonction[numFonction - 1][i] == 20))
+			{
+				isOn[followIsOn] = new String("f" + numFonction + "-" + (i + 1));
+				console.log("isOn["+followIsOn+"] = " + isOn[followIsOn]);
+				followIsOn++;
 			}
 			if(fonction[numFonction - 1][i] == 1)
 			{
@@ -1983,10 +1995,12 @@ $(document).ready(function() {
 				addSecure = 0;
 			if(secure > 1000)
 			{
+				isOn[followIsOn] = new String("00");
 				return(0);
 			}
 			i++;
 		}
+		isOn[followIsOn] = new String("00");
 	}
 
 	function go() {
@@ -2066,6 +2080,14 @@ $(document).ready(function() {
 			console.log("posPersoX = " + posPersoX);
 			console.log("grid["+posPersoY+"]["+posPersoX+"] = " +grid[posPersoY][posPersoX]);
 		}
+		console.log("lastMove = " + lastMove);
+		console.log("isOn = " + isOn);
+		console.log("isOn["+count+"] = " + isOn[count]);
+		if(lastMove != "00")
+			$("#" + lastMove).removeClass("isOn");
+		$("#" + isOn[count]).addClass("isOn");
+		lastMove = new String(isOn[count]);
+		
 		if(toDo[count] == "1")
 		{
 			posPersoY = find_perso('y');

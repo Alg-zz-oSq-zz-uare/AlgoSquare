@@ -211,6 +211,12 @@ body, html, main {
 
 .bordure {
 	box-shadow: 0 0 2px 1px black !important;
+	z-index: 4 !important;
+}
+
+.isOn {
+	box-shadow: 0 0 4px 4px red !important;
+	z-index: 5 !important;
 }
 
 .orange, .vert, .caseF, .f-header, .bleu, .violet {
