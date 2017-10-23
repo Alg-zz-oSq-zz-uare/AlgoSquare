@@ -1278,6 +1278,7 @@ $(document).ready(function() {
 		// 	$("#" + path[x] + " div").html("<p class=\"order\">" + (x + 1) + "</p>");
 		// 	x++;
 		// }
+		$(".isOn").removeClass("isOn");
 		$("div.piece").removeClass("piece");
 		$("div.perso").empty();
 		$("div.perso").removeClass("perso");
