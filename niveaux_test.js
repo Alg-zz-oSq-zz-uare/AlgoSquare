@@ -233,7 +233,7 @@
 
 			movePlat = false;
 
-			perfect = new String("<span>7 coups en</span><span>2 fonctions</span>");
+			perfect = new String("<span>6 coups en</span><span>2 fonctions</span>");
 
 			gridTest[0] = new Array(0,0,0,0,0,0,0,0,0,0);
 			gridTest[1] = new Array(0,0,0,0,0,0,0,0,0,0);
@@ -267,7 +267,7 @@
 
 			movePlat = false;
 
-			perfect = new String("<span>9 coups en</span><span>2 fonctions</span>");
+			perfect = new String("<span>6 coups en</span><span>1 fonction</span>");
 
 			gridTest[0] = new Array(0,0,0,0,0,0,0,0,0,0);
 			gridTest[1] = new Array(0,0,0,0,0,0,0,0,0,0);
@@ -335,7 +335,7 @@
 
 			movePlat = false;
 
-			perfect = new String("<span>7 coups en</span><span>1 fonction</span>");
+			perfect = new String("<span>6 coups en</span><span>1 fonction</span>");
 
 			gridTest[0] = new Array(0,0,0,0,0,0,0,0,0,0);
 			gridTest[1] = new Array(0,0,0,0,0,0,0,0,0,0);
@@ -404,7 +404,7 @@
 
 			movePlat = false;
 
-			perfect = new String("<span>9 coups en</span><span>2 fonctions</span>");
+			perfect = new String("<span>6 coups en</span><span>1 fonction</span>");
 
 			gridTest[0] = new Array(0,0,0,0,0,0,0,0,0,0);
 			gridTest[1] = new Array(0,0,0,0,0,0,2,0,0,0);

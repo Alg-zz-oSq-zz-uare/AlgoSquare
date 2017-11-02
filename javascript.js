@@ -43,8 +43,8 @@ $(document).ready(function() {
 
 	var fonction = new Array();
 	var nbrFonction = 1;
-	var current = new String();
-	current += '0';
+	var current = new String("f1-1");
+	// current += '0';
 
 	for(var coucou = 2; coucou <= 10; coucou++) {
 		$("#f" + coucou).hide();
@@ -74,6 +74,46 @@ $(document).ready(function() {
 		//console.log("... ok.)");
 	}
 
+	function increaseCurrent(idbis) {
+		var lengthId = idbis.length;
+		var numFonctionCase = 0;
+		var numGeneralFonction = 0;
+
+		if(idbis[2] == '-')
+			numGeneralFonction = idbis[1];
+		else
+			numGeneralFonction = idbis[1] + idbis[2];
+
+		if(idbis[lengthId - 3] == '-')
+		{
+			numFonctionCase = idbis[lengthId - 2];
+			//console.log("idbis[lengthId - 2] = " + idbis[lengthId - 2]);
+		}
+		else
+		{
+			numFonctionCase = idbis[lengthId - 3] + idbis[lengthId - 2];
+			//console.log("numFonctionCase = " + numFonctionCase);
+			//console.log("idbis[lengthId - 3] = " + idbis[lengthId - 3] + " && idbis[lengthId - 2] = " + idbis[lengthId - 2]);
+		}
+		numFonctionCase++;
+		if(numFonctionCase > 15)
+		{
+			numFonctionCase = 1;
+			numGeneralFonction++;
+			if(numGeneralFonction > 10)
+			{
+				numGeneralFonction = 1;
+				nbrFonction = 1;
+			}
+			else
+				nbrFonction++;
+			$("#f" + numGeneralFonction).show();
+			$("#option" + (numGeneralFonction + 8)).show();
+		}
+		//console.log("f"+numGeneralFonction+"-"+numFonctionCase);
+		return("f"+numGeneralFonction+"-"+numFonctionCase);
+	}
+
 	$(".fonction div.caseF").click(function () {
 		 var ok = false;
 		 var idbis = current;
@@ -98,10 +138,12 @@ $(document).ready(function() {
 	$(".option").click(function () {
 		var y;
 		var x;
+		var nextCase = false;
 		var idbis = current;
 		idbis += 'a';
 		if(current[0] != '0')
 		{
+			//console.log("current = " + current);
 			if($(this).attr("id") == "option7")
 			{
 				$("#" + current).removeClass("orange");
@@ -123,6 +165,7 @@ $(document).ready(function() {
 			else
 			{
 				$("#" + current).html($(this).html());
+				nextCase = true;
 			}
 			y = getFonction(current[1], 'a');
 			x = getFonction(current[3], idbis[4]);
@@ -345,6 +388,12 @@ $(document).ready(function() {
 				else
 					fonction[y][x] = 18;
 			}
+			if(nextCase == true)
+			{
+				$("#" + current).removeClass("bordure");
+				current = increaseCurrent(idbis);
+				$("#" + current).addClass("bordure");
+			}
 		}
 	});
 
@@ -560,7 +609,7 @@ $(document).ready(function() {
 
 			movePlat = false;
 
-			perfect = new String("<span>7 coups en</span><span>2 fonctions</span>");
+			perfect = new String("<span>6 coups en</span><span>2 fonctions</span>");
 
 			gridTest[0] = new Array(0,0,0,0,0,0,0,0,0,0);
 			gridTest[1] = new Array(0,0,0,0,0,0,0,0,0,0);
@@ -596,7 +645,7 @@ $(document).ready(function() {
 
 			movePlat = false;
 
-			perfect = new String("<span>9 coups en</span><span>2 fonctions</span>");
+			perfect = new String("<span>6 coups en</span><span>1 fonction</span>");
 
 			gridTest[0] = new Array(0,0,0,0,0,0,0,0,0,0);
 			gridTest[1] = new Array(0,0,0,0,0,0,0,0,0,0);
@@ -668,7 +717,7 @@ $(document).ready(function() {
 
 			movePlat = false;
 
-			perfect = new String("<span>7 coups en</span><span>1 fonction</span>");
+			perfect = new String("<span>6 coups en</span><span>1 fonction</span>");
 
 			gridTest[0] = new Array(0,0,0,0,0,0,0,0,0,0);
 			gridTest[1] = new Array(0,0,0,0,0,0,0,0,0,0);
@@ -741,7 +790,7 @@ $(document).ready(function() {
 
 			movePlat = false;
 
-			perfect = new String("<span>9 coups en</span><span>2 fonctions</span>");
+			perfect = new String("<span>6 coups en</span><span>1 fonction</span>");
 
 			gridTest[0] = new Array(0,0,0,0,0,0,0,0,0,0);
 			gridTest[1] = new Array(0,0,0,0,0,0,2,0,0,0);
@@ -1169,6 +1218,9 @@ $(document).ready(function() {
 			x = 0;
 			y++;
 		}
+		$(".bordure").removeClass("bordure");
+		$("#f1-1").addClass("bordure");
+		current = new String("f1-1");
 	}
 
 	function update_html() {
