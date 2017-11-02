@@ -138,11 +138,17 @@ $(document).ready(function() {
 	$(".option").click(function () {
 		var y;
 		var x;
-		var nextCase = false;
 		var idbis = current;
+		var begining = true;
+		//console.log($("#" + current).is(":empty"));
+		if(current != "f1-1" || !$("#" + current).is(":empty"))
+		{
+			begining = false;
+		}
 		idbis += 'a';
 		if(current[0] != '0')
 		{
+
 			//console.log("current = " + current);
 			if($(this).attr("id") == "option7")
 			{
@@ -164,8 +170,13 @@ $(document).ready(function() {
 			}
 			else
 			{
+				if(begining == false && !$("#" + current).is(":empty"))
+				{
+					$("#" + current).removeClass("bordure");
+					current = increaseCurrent(idbis);
+					$("#" + current).addClass("bordure");
+				}
 				$("#" + current).html($(this).html());
-				nextCase = true;
 			}
 			y = getFonction(current[1], 'a');
 			x = getFonction(current[3], idbis[4]);
@@ -387,12 +398,6 @@ $(document).ready(function() {
 					fonction[y][x] = 318;
 				else
 					fonction[y][x] = 18;
-			}
-			if(nextCase == true)
-			{
-				$("#" + current).removeClass("bordure");
-				current = increaseCurrent(idbis);
-				$("#" + current).addClass("bordure");
 			}
 		}
 	});
