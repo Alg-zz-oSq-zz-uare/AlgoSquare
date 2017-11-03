@@ -176,6 +176,11 @@ body, html, main {
 	border: solid white 1px;
 }
 
+#option20, #option5, #option4 {
+	width: 2.8vw;
+	height: 2.8vw;
+}
+
 #option7, #option8, #option8-1 {
 	transform: rotate(-45deg);
 	position: relative;

@@ -175,6 +175,8 @@ $(document).ready(function() {
 					$("#" + current).removeClass("bordure");
 					current = increaseCurrent(idbis);
 					$("#" + current).addClass("bordure");
+					idbis = current;
+					idbis += 'a';
 				}
 				$("#" + current).html($(this).html());
 			}
@@ -2132,17 +2134,17 @@ $(document).ready(function() {
 			}
 			grid[getCoord(path[move], 'y')][getCoord(path[move], 'x')] = 4;
 			$("#"+path[move]).addClass("violet");
-			console.log("//////");
-			//console.log("coucou ! move = " + move);
-			console.log("count = "+ count);
-			console.log("plateforme mouvante est (pour le reste du tour) en " + path[move]);
-			console.log("posPersoY = " + posPersoY);
-			console.log("posPersoX = " + posPersoX);
-			console.log("grid["+posPersoY+"]["+posPersoX+"] = " +grid[posPersoY][posPersoX]);
+			// console.log("//////");
+			// console.log("coucou ! move = " + move);
+			// console.log("count = "+ count);
+			// console.log("plateforme mouvante est (pour le reste du tour) en " + path[move]);
+			// console.log("posPersoY = " + posPersoY);
+			// console.log("posPersoX = " + posPersoX);
+			// console.log("grid["+posPersoY+"]["+posPersoX+"] = " +grid[posPersoY][posPersoX]);
 		}
-		console.log("lastMove = " + lastMove);
-		console.log("isOn = " + isOn);
-		console.log("isOn["+count+"] = " + isOn[count]);
+		// console.log("lastMove = " + lastMove);
+		// console.log("isOn = " + isOn);
+		// console.log("isOn["+count+"] = " + isOn[count]);
 		if(lastMove != "00")
 			$("#" + lastMove).removeClass("isOn");
 		$("#" + isOn[count]).addClass("isOn");
