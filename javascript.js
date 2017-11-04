@@ -44,6 +44,7 @@ $(document).ready(function() {
 	var fonction = new Array();
 	var nbrFonction = 1;
 	var current = new String("f1-1");
+	var toChange = false;
 	// current += '0';
 
 	for(var coucou = 2; coucou <= 10; coucou++) {
@@ -133,6 +134,7 @@ $(document).ready(function() {
 			fonction[getFonction(current[1], 'a')][getFonction(current[3], idbis[4])] = 0;
 		}
 		$(this).addClass("bordure");
+		toChange = true;
 	});
 
 	$(".option").click(function () {
@@ -170,7 +172,7 @@ $(document).ready(function() {
 			}
 			else
 			{
-				if(begining == false && !$("#" + current).is(":empty"))
+				if(begining == false && !$("#" + current).is(":empty") && toChange == false)
 				{
 					$("#" + current).removeClass("bordure");
 					current = increaseCurrent(idbis);
@@ -178,6 +180,8 @@ $(document).ready(function() {
 					idbis = current;
 					idbis += 'a';
 				}
+				else
+					toChange = false;
 				$("#" + current).html($(this).html());
 			}
 			y = getFonction(current[1], 'a');
