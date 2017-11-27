@@ -1219,6 +1219,7 @@ $(document).ready(function() {
 				fonction[y][x] = 0;
 				$("#f" + (y + 1) + "-" + (x + 1)).empty();
 				$("#f" + (y + 1) + "-" + (x + 1)).removeClass("orange");
+				$("#f" + (y + 1) + "-" + (x + 1)).removeClass("bleu");
 				$("#f" + (y + 1) + "-" + (x + 1)).removeClass("vert");
 				x++;
 			}

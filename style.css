@@ -1,3 +1,11 @@
+.option, #start, #startBis, #stop, .caseF, button {
+	cursor: pointer;
+}
+
+* {
+	max-width: 100% !important;
+}
+
 body, html, main {
 	padding: 0;
 	margin: 0;
@@ -104,21 +112,6 @@ body, html, main {
 	border: solid grey 2px;
 	/*display: none;*/
 }
-/*.order {
-	/*display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 1.5vw;
-	height: 1.5vw;
-	background-color: rgba(50, 50, 50, 0.4);
-	border-radius: 50%;*/
-	/*position: relative;
-	left: 0.5vw;
-	top: 0.5vw;
-	margin: 0;
-	font-size: 1vw;
-	font-weight: bold;
-}*/
 
 .piece {
 	width: 2vw;
@@ -243,6 +236,7 @@ body, html, main {
 }
 
 #action {
+	overflow: hidden;
 	width: 50vw;
 	/*height: 100vh;*/
 }
@@ -554,6 +548,10 @@ button {
 		width: 6.2vw;
 		height: 6.2vw;
 	}
+	#option20, #option5, #option4 {
+		width: 5.8vw;
+		height: 5.8vw;
+	}
 	.fonction {
 		width: calc(6.2vw * 15);
 	}
@@ -734,6 +732,10 @@ button {
 	.option {
 		width: 6.2vw;
 		height: 6.2vw;
+	}
+	#option20, #option5, #option4 {
+		width: 5.8vw;
+		height: 5.8vw;
 	}
 	.fonction {
 		width: calc(6.2vw * 15);
