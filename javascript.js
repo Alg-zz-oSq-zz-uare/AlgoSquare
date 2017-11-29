@@ -276,13 +276,11 @@ $(document).ready(function() {
 			{
 				console.log("condition bleu");
 				if(fonction[y][x] >= 100 && fonction[y][x] < 200)
-					fonction[y][x] = 120;
+					fonction[y][x] += 200;
 				else if(fonction[y][x] >= 200 && fonction[y][x] < 300)
-					fonction[y][x] = 220;
-				else if(fonction[y][x] >= 300)
-					fonction[y][x] = 320;
-				else
-					fonction[y][x] = 9;
+					fonction[y][x] += 100;
+				else if(fonction[y][x] < 100)
+					fonction[y][x] += 300;
 			}
 			if($(this).attr("id") == "option6")
 			{
